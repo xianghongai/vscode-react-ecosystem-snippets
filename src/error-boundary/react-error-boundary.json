@@ -1,9 +1,6 @@
 {
   "react-error-boundary import": {
-    "prefix": [
-      "reactErrorBoundaryImport",
-      "reactErrorBoundary"
-    ],
+    "prefix": "reactErrorBoundaryImport",
     "body": [
       "import { ErrorBoundary } from 'react-error-boundary';$0"
     ],
@@ -70,10 +67,7 @@
     "isFileTemplate": true
   },
   "react-error-boundary fallback render JavaScript": {
-    "prefix": [
-      "reactErrorBoundaryFallbackJS",
-      "reactErrorBoundaryFallback"
-    ],
+    "prefix": "reactErrorBoundaryFallbackJS",
     "body": [
       "const fallbackRender = ({ error, resetErrorBoundary }) => (",
       "  <section role=\"alert\">",
@@ -86,10 +80,7 @@
     "scope": "javascriptreact"
   },
   "react-error-boundary fallback render TypeScript": {
-    "prefix": [
-      "reactErrorBoundaryFallbackTS",
-      "reactErrorBoundaryFallback"
-    ],
+    "prefix": "reactErrorBoundaryFallbackTS",
     "body": [
       "const fallbackRender = ({ error, resetErrorBoundary }: FallbackProps) => (",
       "  <section role=\"alert\">",
@@ -115,10 +106,7 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-error-boundary async showBoundary": {
-    "prefix": [
-      "reactErrorBoundaryAsync",
-      "useErrorBoundary"
-    ],
+    "prefix": "reactErrorBoundaryAsync",
     "body": [
       "const { showBoundary } = useErrorBoundary();",
       "",

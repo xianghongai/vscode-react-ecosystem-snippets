@@ -2,7 +2,7 @@
   "name": "vscode-react-ecosystem-snippets",
   "displayName": "React Stack Snippets",
   "description": "Everyday React ecosystem snippets: Zustand, Immer, Zod, React Hook Form, TanStack Query, i18n and testing. React 生态高频片段。",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "NicholasHsiang",
   "license": "MIT",
   "type": "module",

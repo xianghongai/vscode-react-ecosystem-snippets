@@ -1,6 +1,9 @@
 {
   "TanStack Query useMutation invalidate (JavaScript)": {
-    "prefix": "useMutation",
+    "prefix": [
+      "useMutation",
+      "um"
+    ],
     "body": [
       "export function ${1:useCreateUser}() {",
       "  const queryClient = useQueryClient();",
@@ -18,7 +21,10 @@
     "scope": "javascript,javascriptreact"
   },
   "TanStack Query useMutation invalidate (TypeScript)": {
-    "prefix": "useMutation",
+    "prefix": [
+      "useMutation",
+      "um"
+    ],
     "body": [
       "export function ${1:useCreateUser}() {",
       "  const queryClient = useQueryClient();",

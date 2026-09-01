@@ -16,10 +16,7 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "i18next local initialization TypeScript": {
-    "prefix": [
-      "i18nInitTS",
-      "i18nInit"
-    ],
+    "prefix": "i18nInitTS",
     "body": [
       "import i18n from 'i18next';",
       "import { initReactI18next } from 'react-i18next';",
@@ -56,10 +53,7 @@
     "isFileTemplate": true
   },
   "i18next local initialization JavaScript": {
-    "prefix": [
-      "i18nInitJS",
-      "i18nInit"
-    ],
+    "prefix": "i18nInitJS",
     "body": [
       "import i18n from 'i18next';",
       "import { initReactI18next } from 'react-i18next';",
@@ -131,10 +125,7 @@
     "isFileTemplate": true
   },
   "i18next namespace useTranslation": {
-    "prefix": [
-      "i18nUseTranslationNamespace",
-      "i18nUseTranslation"
-    ],
+    "prefix": "i18nUseTranslationNamespace",
     "body": [
       "const { t, i18n } = useTranslation('${1:common}');$0"
     ],
@@ -142,10 +133,7 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "i18next translation interpolation": {
-    "prefix": [
-      "i18nTranslateInterpolation",
-      "i18nT"
-    ],
+    "prefix": "i18nTranslateInterpolation",
     "body": [
       "t('${1:greeting}', { ${2:name}: '${3:Alex}' });$0"
     ],

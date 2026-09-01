@@ -1,6 +1,8 @@
 {
   "nuqs useQueryState (string)": {
-    "prefix": "useQueryState",
+    "prefix": [
+      "useQueryState"
+    ],
     "body": [
       "const [${1:query}, ${2:setQuery}] = useQueryState('${3:q}');",
       "$0"
@@ -9,7 +11,9 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "nuqs useQueryState (parsed with default)": {
-    "prefix": "useQueryState",
+    "prefix": [
+      "useQueryState"
+    ],
     "body": [
       "const [${1:page}, ${2:setPage}] = useQueryState('${3:page}', parseAsInteger.withDefault(${4:1}));",
       "$0"
@@ -48,7 +52,9 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "nuqs setter options (history and shallow)": {
-    "prefix": "useQueryState",
+    "prefix": [
+      "useQueryState"
+    ],
     "body": [
       "await ${1:setPage}(${2:2}, { history: '${3:push}', shallow: ${4:false} });",
       "$0"

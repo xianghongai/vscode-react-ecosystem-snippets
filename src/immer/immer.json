@@ -11,7 +11,7 @@
   "Immer produce state copy": {
     "prefix": [
       "immerProduce",
-      "produce"
+      "ip"
     ],
     "body": [
       "const ${1:nextState} = produce(${2:state}, (draft) => {",
@@ -34,10 +34,7 @@
     "scope": "typescript,typescriptreact"
   },
   "Immer update nested property": {
-    "prefix": [
-      "immerNested",
-      "immerUpdate"
-    ],
+    "prefix": "immerNested",
     "body": [
       "const ${1:nextState} = produce(${2:state}, (draft) => {",
       "  draft.${3:user}.${4:profile}.${5:name} = ${6:'Updated name'};",

@@ -32,7 +32,10 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "jotai useAtom": {
-    "prefix": "useAtom",
+    "prefix": [
+      "useAtom",
+      "ua"
+    ],
     "body": [
       "const [${1:count}, ${2:setCount}] = useAtom(${3:countAtom});",
       "$0"
@@ -41,7 +44,10 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "jotai useAtomValue": {
-    "prefix": "useAtomValue",
+    "prefix": [
+      "useAtomValue",
+      "uav"
+    ],
     "body": [
       "const ${1:count} = useAtomValue(${2:countAtom});",
       "$0"
@@ -50,7 +56,10 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "jotai useSetAtom": {
-    "prefix": "useSetAtom",
+    "prefix": [
+      "useSetAtom",
+      "usa"
+    ],
     "body": [
       "const ${1:setCount} = useSetAtom(${2:countAtom});",
       "$0"

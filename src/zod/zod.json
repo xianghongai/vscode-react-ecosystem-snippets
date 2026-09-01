@@ -11,7 +11,7 @@
   "Zod object schema": {
     "prefix": [
       "zodObject",
-      "zodSchema"
+      "zo"
     ],
     "body": [
       "const ${1:userSchema} = z.object({",

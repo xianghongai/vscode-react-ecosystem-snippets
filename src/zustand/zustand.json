@@ -36,7 +36,10 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "Zustand typed counter store file": {
-    "prefix": "zustandStore",
+    "prefix": [
+      "zustandStore",
+      "zs"
+    ],
     "body": [
       "import { create } from 'zustand';",
       "",
@@ -63,7 +66,10 @@
     "isFileTemplate": true
   },
   "Zustand JavaScript counter store file": {
-    "prefix": "zustandStore",
+    "prefix": [
+      "zustandStore",
+      "zs"
+    ],
     "body": [
       "import { create } from 'zustand';",
       "",
@@ -101,10 +107,7 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "Zustand shallow multi-selector": {
-    "prefix": [
-      "zustandUseShallow",
-      "useShallow"
-    ],
+    "prefix": "zustandUseShallow",
     "body": [
       "const { ${1:count}, ${2:increment} } = ${3:useCounterStore}(",
       "  useShallow((state) => ({ ${1}: state.${1}, ${2}: state.${2} })),",

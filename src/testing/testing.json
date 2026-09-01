@@ -1,9 +1,6 @@
 {
   "testing-library component interaction JavaScript": {
-    "prefix": [
-      "rtlComponentInteractionJSX",
-      "rtlTest"
-    ],
+    "prefix": "rtlComponentInteractionJSX",
     "body": [
       "import { describe, expect, it } from 'vitest';",
       "import { render, screen } from '@testing-library/react';",
@@ -26,10 +23,7 @@
     "isFileTemplate": true
   },
   "testing-library component interaction TypeScript": {
-    "prefix": [
-      "rtlComponentInteractionTSX",
-      "rtlTest"
-    ],
+    "prefix": "rtlComponentInteractionTSX",
     "body": [
       "import { describe, expect, it } from 'vitest';",
       "import { render, screen } from '@testing-library/react';",
@@ -102,10 +96,7 @@
     "isFileTemplate": true
   },
   "testing-library renderHook JavaScript": {
-    "prefix": [
-      "rtlRenderHookJS",
-      "rtlHookTest"
-    ],
+    "prefix": "rtlRenderHookJS",
     "body": [
       "import { describe, expect, it } from 'vitest';",
       "import { act, renderHook } from '@testing-library/react';",
@@ -128,10 +119,7 @@
     "isFileTemplate": true
   },
   "testing-library renderHook TypeScript": {
-    "prefix": [
-      "rtlRenderHookTS",
-      "rtlHookTest"
-    ],
+    "prefix": "rtlRenderHookTS",
     "body": [
       "import { describe, expect, it } from 'vitest';",
       "import { act, renderHook } from '@testing-library/react';",
@@ -154,10 +142,7 @@
     "isFileTemplate": true
   },
   "testing-library Query wrapper JavaScript": {
-    "prefix": [
-      "rtlQueryWrapperJSX",
-      "rtlQueryWrapper"
-    ],
+    "prefix": "rtlQueryWrapperJSX",
     "body": [
       "import { QueryClient, QueryClientProvider } from '@tanstack/react-query';",
       "",
@@ -178,10 +163,7 @@
     "isFileTemplate": true
   },
   "testing-library Query wrapper TypeScript": {
-    "prefix": [
-      "rtlQueryWrapperTSX",
-      "rtlQueryWrapper"
-    ],
+    "prefix": "rtlQueryWrapperTSX",
     "body": [
       "import type { PropsWithChildren } from 'react';",
       "import { QueryClient, QueryClientProvider } from '@tanstack/react-query';",

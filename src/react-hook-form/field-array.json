@@ -1,6 +1,9 @@
 {
   "React Hook Form useFieldArray (JavaScript)": {
-    "prefix": "useFieldArray",
+    "prefix": [
+      "useFieldArray",
+      "ufa"
+    ],
     "body": [
       "export function ${1:ContactListFields}() {",
       "  const { control, register } = useForm({",
@@ -28,7 +31,10 @@
     "scope": "javascriptreact"
   },
   "React Hook Form useFieldArray (TypeScript)": {
-    "prefix": "useFieldArray",
+    "prefix": [
+      "useFieldArray",
+      "ufa"
+    ],
     "body": [
       "export function ${1:ContactListFields}() {",
       "  const { control, register } = useForm<${2:ContactsForm}>({",
