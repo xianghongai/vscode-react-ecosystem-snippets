@@ -38,7 +38,7 @@
   "contributes": {
     "snippets": [
       {
-        "path": "./snippets/react-ecosystem.code-snippets"
+        "path": "./snippets/index.code-snippets"
       }
     ]
   },

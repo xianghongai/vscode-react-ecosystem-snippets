@@ -24,11 +24,11 @@ type Snippet = {
 };
 
 /* ------------------------------------------------------------------ *
- * 仓库相关配置——移植到其他片段仓库时只需改动这一段                   *
+ * 输入与输出——两者都不含仓库名，可原样移植到其他片段仓库             *
  * ------------------------------------------------------------------ */
 
 const sources = 'src/**/*.json';
-const output = 'snippets/react-ecosystem.code-snippets';
+const output = 'snippets/index.code-snippets';
 
 /**
  * 从 `sources` 中排除的 glob，逗号分隔，取自环境变量 `SNIPPETS_EXCLUDE`。
