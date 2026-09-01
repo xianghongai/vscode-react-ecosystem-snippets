@@ -1,0 +1,115 @@
+{
+  "Zod import schema builder": {
+    "prefix": "zodImport",
+    "body": [
+      "import { z } from 'zod';",
+      "$0"
+    ],
+    "description": "Import the Zod schema builder. Place it in the module import section.\n\n导入 Zod schema builder；放在模块导入区。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod object schema": {
+    "prefix": [
+      "zodObject",
+      "zodSchema"
+    ],
+    "body": [
+      "const ${1:userSchema} = z.object({",
+      "  ${2:email}: z.email(),",
+      "});",
+      "$0"
+    ],
+    "description": "Define a Zod object schema. Requires z from zod.\n\n定义 Zod 对象 schema；需要从 zod 导入 z。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod enum schema": {
+    "prefix": "zodEnum",
+    "body": [
+      "const ${1:statusSchema} = z.enum([${2:'draft'}, ${3:'published'}]);",
+      "$0"
+    ],
+    "description": "Define a Zod string enum schema. Requires z from zod.\n\n定义 Zod 字符串枚举 schema；需要从 zod 导入 z。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod discriminated union": {
+    "prefix": "zodDiscriminatedUnion",
+    "body": [
+      "const ${1:resultSchema} = z.discriminatedUnion('${2:status}', [",
+      "  z.object({ ${2}: z.literal('${3:success}'), ${4:data}: z.string() }),",
+      "  z.object({ ${2}: z.literal('${5:error}'), ${6:message}: z.string() }),",
+      "]);",
+      "$0"
+    ],
+    "description": "Define a union discriminated by a literal field. Requires z from zod.\n\n定义以字面量字段为判别键的 Zod 联合类型；需要从 zod 导入 z。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod array schema": {
+    "prefix": "zodArray",
+    "body": [
+      "const ${1:tagsSchema} = z.array(z.string().min(${2:1}));",
+      "$0"
+    ],
+    "description": "Define a Zod array schema. Requires z from zod.\n\n定义 Zod 数组 schema；需要从 zod 导入 z。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod optional field": {
+    "prefix": "zodOptional",
+    "body": [
+      "${1:displayName}: z.string().min(${2:1}).optional(),",
+      "$0"
+    ],
+    "description": "Add an optional field to a Zod object shape. Place it inside z.object({ ... }); requires z from zod.\n\n向 Zod 对象 shape 添加可选字段；放在 z.object({ ... }) 内部，需要从 zod 导入 z。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod coerced number": {
+    "prefix": "zodCoerceNumber",
+    "body": [
+      "${1:age}: z.coerce.number().int().min(${2:0}),",
+      "$0"
+    ],
+    "description": "Coerce and validate a numeric field, for form and query-string input. Place it inside z.object({ ... }); requires z from zod.\n\n强制转换并校验数值字段，适用于表单与查询串输入；放在 z.object({ ... }) 内部，需要从 zod 导入 z。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod safe parse": {
+    "prefix": "zodSafeParse",
+    "body": [
+      "const ${1:result} = ${2:schema}.safeParse(${3:value});",
+      "if (!${1}.success) {",
+      "  console.error(${1}.error.issues);",
+      "} else {",
+      "  const ${4:data} = ${1}.data;",
+      "  $0",
+      "}"
+    ],
+    "description": "Validate unknown data without throwing. Requires an existing schema and value.\n\n在不抛异常的前提下校验未知数据；需要已有的 schema 和待校验值。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod async parse": {
+    "prefix": "zodParseAsync",
+    "body": [
+      "const ${1:data} = await ${2:schema}.parseAsync(${3:value});",
+      "$0"
+    ],
+    "description": "Parse data with asynchronous refinements. Requires an async context, a schema, and a value.\n\n解析带异步 refinement 的数据；需要 async 上下文、schema 和待解析值。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod string transform": {
+    "prefix": "zodTransform",
+    "body": [
+      "const ${1:normalizedNameSchema} = z.string().trim().transform((value) => value.toLowerCase());",
+      "$0"
+    ],
+    "description": "Define a schema that transforms its parsed text. Requires z from zod.\n\n定义会转换解析结果的文本 schema；需要从 zod 导入 z。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zod input and output types": {
+    "prefix": "zodInputOutput",
+    "body": [
+      "type ${1:UserInput} = z.input<typeof ${2:userSchema}>;",
+      "type ${3:User} = z.output<typeof ${2}>;",
+      "$0"
+    ],
+    "description": "Derive the distinct input and output types of a transforming schema. Requires z from zod and an existing schema.\n\n推导带转换的 schema 的输入与输出类型；需要从 zod 导入 z，以及已有的 schema。",
+    "scope": "typescript,typescriptreact"
+  }
+}

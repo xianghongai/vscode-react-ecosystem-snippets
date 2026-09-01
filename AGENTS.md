@@ -1,0 +1,38 @@
+# React Stack Snippets
+
+## Ownership and scope
+
+- This is a declarative VS Code snippet extension. Source of truth is `src/<module>/*.json`; generated `snippets/` and `.cache/` are ignored.
+- `scripts/build.ts` is the whole build. It keeps its two project-specific values (source glob, output path) in a `REPO-SPECIFIC CONFIG` block at the top, mirroring the sibling snippet repositories' `main.js`; the rest is generic.
+- This extension ships one generated `.code-snippets` file and dispatches per snippet via `scope`. The sibling repositories instead emit one file per language; `scripts/build.ts` deliberately does not support that model.
+- Do not add an extension host entrypoint, activation events, dependency installers, auto-import logic, telemetry, or production dependencies.
+- Keep React core, routing, generic JavaScript and project-specific UI/framework conventions in their existing owners. Never edit sibling repositories as part of work here.
+- TanStack Query owns server state, React Hook Form owns form state, Zod validates external data, and nuqs owns state that lives in the URL. Client state has two alternatives — Zustand and Jotai — and general hooks have four — ahooks, react-use, usehooks-ts and rooks; a developer picks one, so ship each library's real API side by side rather than choosing for them. Do not introduce request hooks from a general-hooks library; server state stays with TanStack Query.
+- `src/recipes/` owns the six cross-library examples; library folders must not duplicate them.
+
+## Snippet contract
+
+- Each top-level name is unique. Use only standard VS Code fields: `prefix`, `body`, `description`, `scope`, and native `isFileTemplate` for complete files.
+- Every snippet has explicit scopes chosen from `javascript`, `javascriptreact`, `typescript`, `typescriptreact`. TypeScript syntax never targets JavaScript; JSX never targets plain JS/TS language modes.
+- Prefixes are camelCase — never kebab-case. Use the real API name when the snippet is one API (`useForm`, `useQuery`), and a `<module>…` stem for a scenario (`rhfSetError`, `queryPagination`). Prefixes may repeat, here and across companion extensions: VS Code triggers on prefix but identifies a snippet by name, and offers same-prefix candidates side by side labelled by name. Only the name must be unique. Do not add `…Js`/`…Ts` prefix variants merely to keep a JS/TS pair apart.
+- Separate imports from fragments. Full file templates include imports; fragments document required imports and insertion position.
+- Each body contains one final `$0`; editable numbered placeholders have meaningful defaults and use mirrors for repeated identifiers. Escape literal dollar signs in JavaScript template literals.
+- Parameterize what a developer renames — component, hook, type, service function, cache key — and leave illustrative field names as literals so the Tab sequence stays short. A TypeScript annotation that repeats a parameterized name must mirror it, not restate the default.
+- `$0` sits on its own line at the end of the body, or inside a callback body the developer fills in. Never place it immediately before literal text or an expression: a `$0` with nowhere natural to go means the body needs a real continuation point, not a filler position.
+- Use English names/API spellings. Descriptions are `English sentence. Requirement sentence.` then a blank line then `中文句；需要……。` — one language per paragraph, never an English clause trailing a Chinese one. Example paths and names are neutral, editable and relative; no private aliases, hosts, credentials or copied business code. Use reserved `.invalid` email examples.
+- Stable API targets: React 19, Immer 11, Zustand 5, Jotai 2, Zod 4, RHF 7/resolvers 5, Query 5, nuqs 2, i18next 26/react-i18next 17, ahooks 3/react-use 17/usehooks-ts 3/rooks 9, error-boundary 6, clsx 2, tailwind-merge 3 (Tailwind 4), Vitest 4/Testing Library. Patch versions are locked in `pnpm-lock.yaml`.
+
+## Commands and verification
+
+- Development uses Node.js 24 and pnpm 11. `mise install` prepares the declared tools; `pnpm install --frozen-lockfile` installs development dependencies.
+- `pnpm test`: expand every snippet to its placeholder defaults and parse the result with each targeted language's grammar. Syntax only — it must never grow assertions about what the expanded code does, nor type-check against dependency types.
+- `pnpm run lint`: oxlint over `scripts` and `tests`. Snippet JSON is data, not linted code.
+- `pnpm run format:check`: oxfmt gate; `pnpm run format` is an explicit source mutation. `src/**` is excluded because a snippet `body` is one array element per emitted line, and reflowing it to the print width destroys that correspondence.
+- `pnpm run build`: deterministically aggregate sources into one scoped `.code-snippets` file. It reads `SNIPPETS_EXCLUDE` — comma-separated globs, from the environment or an optional gitignored `.env` — so someone building from source can drop the alternative libraries they did not pick without editing a tracked file. Unset means every source is included. Do not delete that plumbing as unused just because the repository ships no `.env`. Released builds ship every source; a consumer of the published extension prunes candidates with "Hide from IntelliSense" in `Insert Snippet` instead, which persists per profile and survives extension updates.
+- `pnpm run package`: run prepublish checks then `vsce package --no-dependencies`. Never publish, commit, push, create a remote repository or install the extension without explicit instruction.
+- Optional native `keytar` and `@vscode/vsce-sign` install scripts are disabled because unsigned VSIX packaging does not need them. Do not broadly enable dependency install scripts.
+- If adding Bash/Zsh scripts, all execution, syntax, lint and behavioral tests must run in disposable Docker containers with source read-only and no credentials/network/socket by default. Never fall back to host execution; Linux containers do not prove macOS/BSD runtime compatibility.
+
+## Delivery
+
+Snippets target the dependency versions listed above and the everyday scenarios of those libraries; do not add defensive validation that re-proves what those conventions already settle. Those libraries are installed as devDependencies for one purpose only: reading their published `.d.ts` so a snippet's signature is copied from the source of truth rather than from memory. Read them, never build a check against them — no fixture type-checking, no compiling expansions, no runtime assertions about library behaviour. The extension itself has no runtime dependency on any of them and the VSIX carries none. Report exactly which checks ran; a green build is not editor acceptance, so verify insertion, Tab order and the final cursor by hand in the Extension Development Host. External skills are optional; these rules and commands are sufficient on their own.

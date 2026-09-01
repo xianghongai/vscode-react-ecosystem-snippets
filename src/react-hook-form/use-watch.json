@@ -1,0 +1,56 @@
+{
+  "React Hook Form useWatch preview (JavaScript)": {
+    "prefix": "useWatch",
+    "body": [
+      "export function ${1:DisplayNamePreview}() {",
+      "  const { control, register } = useForm({",
+      "    defaultValues: { firstName: '', lastName: '' },",
+      "  });",
+      "  const [firstName, lastName] = useWatch({",
+      "    control,",
+      "    name: ['firstName', 'lastName'],",
+      "  });",
+      "",
+      "  return (",
+      "    <section aria-label=\"${2:Display name preview}\">",
+      "      <p>{[firstName, lastName].filter(Boolean).join(' ') || 'Add your name'}</p>",
+      "      <label htmlFor=\"first-name\">First name</label>",
+      "      <input id=\"first-name\" {...register('firstName')} />",
+      "      <label htmlFor=\"last-name\">Last name</label>",
+      "      <input id=\"last-name\" {...register('lastName')} />",
+      "    </section>",
+      "  );",
+      "}",
+      "$0"
+    ],
+    "description": "Subscribe to selected fields so only this subtree re-renders. Requires useForm and useWatch from react-hook-form.\n\n订阅选定字段，使重渲染局限在该子树；需要从 react-hook-form 导入 useForm 和 useWatch。",
+    "scope": "javascriptreact"
+  },
+  "React Hook Form useWatch preview (TypeScript)": {
+    "prefix": "useWatch",
+    "body": [
+      "export function ${1:DisplayNamePreview}() {",
+      "  const { control, register } = useForm<${2:NameForm}>({",
+      "    defaultValues: { firstName: '', lastName: '' },",
+      "  });",
+      "  const [firstName, lastName] = useWatch({",
+      "    control,",
+      "    name: ['firstName', 'lastName'],",
+      "  });",
+      "",
+      "  return (",
+      "    <section aria-label=\"${3:Display name preview}\">",
+      "      <p>{[firstName, lastName].filter(Boolean).join(' ') || 'Add your name'}</p>",
+      "      <label htmlFor=\"first-name\">First name</label>",
+      "      <input id=\"first-name\" {...register('firstName')} />",
+      "      <label htmlFor=\"last-name\">Last name</label>",
+      "      <input id=\"last-name\" {...register('lastName')} />",
+      "    </section>",
+      "  );",
+      "}",
+      "$0"
+    ],
+    "description": "Subscribe to selected fields of a typed form so only this subtree re-renders. Requires useForm and useWatch from react-hook-form and the form value type in scope.\n\n订阅类型化表单的选定字段，使重渲染局限在该子树；需要从 react-hook-form 导入 useForm、useWatch，并在作用域中提供表单值类型。",
+    "scope": "typescriptreact"
+  }
+}

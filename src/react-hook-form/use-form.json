@@ -1,0 +1,62 @@
+{
+  "React Hook Form useForm native fields (JavaScript)": {
+    "prefix": "useForm",
+    "body": [
+      "export function ${1:ProfileFormFields}() {",
+      "  const {",
+      "    register,",
+      "    handleSubmit,",
+      "    formState: { errors },",
+      "  } = useForm({",
+      "    defaultValues: { name: '' },",
+      "  });",
+      "",
+      "  const onSubmit = (values) => {",
+      "    console.log(values);",
+      "  };",
+      "",
+      "  return (",
+      "    <form onSubmit={handleSubmit(onSubmit)}>",
+      "      <label htmlFor=\"profile-name\">Name</label>",
+      "      <input id=\"profile-name\" {...register('name', { required: 'Enter a name' })} />",
+      "      {errors.name?.message ? <p role=\"alert\">{errors.name.message}</p> : null}",
+      "      <button type=\"submit\">${2:Save profile}</button>",
+      "    </form>",
+      "  );",
+      "}",
+      "$0"
+    ],
+    "description": "Register native fields and surface their validation messages. Requires useForm from react-hook-form.\n\n注册原生字段并展示校验信息；需要从 react-hook-form 导入 useForm。",
+    "scope": "javascriptreact"
+  },
+  "React Hook Form useForm native fields (TypeScript)": {
+    "prefix": "useForm",
+    "body": [
+      "export function ${1:ProfileFormFields}() {",
+      "  const {",
+      "    register,",
+      "    handleSubmit,",
+      "    formState: { errors },",
+      "  } = useForm<${2:ProfileForm}>({",
+      "    defaultValues: { name: '' },",
+      "  });",
+      "",
+      "  const onSubmit = (values: ${2}) => {",
+      "    console.log(values);",
+      "  };",
+      "",
+      "  return (",
+      "    <form onSubmit={handleSubmit(onSubmit)}>",
+      "      <label htmlFor=\"profile-name\">Name</label>",
+      "      <input id=\"profile-name\" {...register('name', { required: 'Enter a name' })} />",
+      "      {errors.name?.message ? <p role=\"alert\">{errors.name.message}</p> : null}",
+      "      <button type=\"submit\">${3:Save profile}</button>",
+      "    </form>",
+      "  );",
+      "}",
+      "$0"
+    ],
+    "description": "Register native fields on a typed form and surface their validation messages. Requires useForm from react-hook-form and the form value type in scope.\n\n为类型化表单注册原生字段并展示校验信息；需要从 react-hook-form 导入 useForm，并在作用域中提供表单值类型。",
+    "scope": "typescriptreact"
+  }
+}

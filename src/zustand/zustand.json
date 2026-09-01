@@ -1,0 +1,210 @@
+{
+  "Zustand import create": {
+    "prefix": "zustandImportCreate",
+    "body": [
+      "import { create } from 'zustand';",
+      "$0"
+    ],
+    "description": "Import Zustand create. Place it in the module import section.\n\n导入 Zustand 的 create；放在模块导入区。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zustand import useShallow": {
+    "prefix": "zustandImportShallow",
+    "body": [
+      "import { useShallow } from 'zustand/react/shallow';",
+      "$0"
+    ],
+    "description": "Import the useShallow selector helper. Place it in the module import section.\n\n导入 useShallow selector 辅助函数；放在模块导入区。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zustand import persist middleware": {
+    "prefix": "zustandImportPersist",
+    "body": [
+      "import { persist } from 'zustand/middleware';",
+      "$0"
+    ],
+    "description": "Import the persist middleware. Place it in the module import section.\n\n导入 persist 中间件；放在模块导入区。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zustand import devtools middleware": {
+    "prefix": "zustandImportDevtools",
+    "body": [
+      "import { devtools } from 'zustand/middleware';",
+      "$0"
+    ],
+    "description": "Import the devtools middleware. Place it in the module import section.\n\n导入 devtools 中间件；放在模块导入区。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zustand typed counter store file": {
+    "prefix": "zustandStore",
+    "body": [
+      "import { create } from 'zustand';",
+      "",
+      "export type ${1:CounterStore} = {",
+      "  count: number;",
+      "  increment: () => void;",
+      "  decrement: () => void;",
+      "  reset: () => void;",
+      "};",
+      "",
+      "const initialCount = ${2:0};",
+      "",
+      "export const ${3:useCounterStore} = create<${1}>((set) => ({",
+      "  count: initialCount,",
+      "  increment: () => set((state) => ({ count: state.count + 1 })),",
+      "  decrement: () => set((state) => ({ count: state.count - 1 })),",
+      "  reset: () => set({ count: initialCount }),",
+      "}));",
+      "",
+      "$0"
+    ],
+    "description": "Complete typed counter store file. Creates and exports the store type and its bound hook.\n\n完整的类型化计数器 store 文件；创建并导出 store 类型及其绑定 Hook。",
+    "scope": "typescript,typescriptreact",
+    "isFileTemplate": true
+  },
+  "Zustand JavaScript counter store file": {
+    "prefix": "zustandStore",
+    "body": [
+      "import { create } from 'zustand';",
+      "",
+      "const initialCount = ${1:0};",
+      "",
+      "export const ${2:useCounterStore} = create((set) => ({",
+      "  count: initialCount,",
+      "  increment: () => set((state) => ({ count: state.count + 1 })),",
+      "  decrement: () => set((state) => ({ count: state.count - 1 })),",
+      "  reset: () => set({ count: initialCount }),",
+      "}));",
+      "",
+      "$0"
+    ],
+    "description": "Complete JavaScript counter store file. Creates and exports the bound store hook.\n\n完整的 JavaScript 计数器 store 文件；创建并导出绑定的 store Hook。",
+    "scope": "javascript,javascriptreact",
+    "isFileTemplate": true
+  },
+  "Zustand select state": {
+    "prefix": "zustandSelect",
+    "body": [
+      "const ${1:count} = ${2:useCounterStore}((state) => state.${1});",
+      "$0"
+    ],
+    "description": "Select one state field in a React component. Requires an existing bound store hook.\n\n在 React 组件中选择一个状态字段；需要已有的绑定 store Hook。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zustand select action": {
+    "prefix": "zustandAction",
+    "body": [
+      "const ${1:increment} = ${2:useCounterStore}((state) => state.${1});",
+      "$0"
+    ],
+    "description": "Select one action in a React component. Requires an existing bound store hook.\n\n在 React 组件中选择一个 action；需要已有的绑定 store Hook。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zustand shallow multi-selector": {
+    "prefix": [
+      "zustandUseShallow",
+      "useShallow"
+    ],
+    "body": [
+      "const { ${1:count}, ${2:increment} } = ${3:useCounterStore}(",
+      "  useShallow((state) => ({ ${1}: state.${1}, ${2}: state.${2} })),",
+      ");",
+      "$0"
+    ],
+    "description": "Select several values through one shallow-compared selector. Requires useShallow from zustand/react/shallow and an existing bound store hook.\n\n通过一个浅比较 selector 选择多个值；需要从 zustand/react/shallow 导入 useShallow，以及已有的绑定 store Hook。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zustand reset state action": {
+    "prefix": "zustandReset",
+    "body": [
+      "reset: () => set(${1:initialState}),",
+      "$0"
+    ],
+    "description": "Add a reset action to a state creator. Place it inside the object returned by create, and define initialState outside it.\n\n为 state creator 添加 reset action；放在 create 返回的对象内部，并在其外部定义 initialState。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "Zustand JavaScript persisted settings store": {
+    "prefix": "zustandPersist",
+    "body": [
+      "const ${1:useSettingsStore} = create(",
+      "  persist(",
+      "    (set) => ({",
+      "      ${2:theme}: '${3:system}',",
+      "      set${4:Theme}: (${2}) => set({ ${2} }),",
+      "    }),",
+      "    {",
+      "      name: '${5:settings-storage}',",
+      "      partialize: (state) => ({ ${2}: state.${2} }),",
+      "    },",
+      "  ),",
+      ");",
+      "$0"
+    ],
+    "description": "Persist a chosen subset of the store with partialize. Requires create and persist from zustand.\n\n使用 partialize 持久化 store 中选定的子集；需要从 zustand 导入 create 和 persist。",
+    "scope": "javascript,javascriptreact"
+  },
+  "Zustand typed persisted settings store": {
+    "prefix": "zustandPersist",
+    "body": [
+      "type ${1:SettingsStore} = {",
+      "  theme: string;",
+      "  setTheme: (theme: string) => void;",
+      "};",
+      "",
+      "const ${2:useSettingsStore} = create<${1}>()(",
+      "  persist(",
+      "    (set) => ({",
+      "      theme: '${3:system}',",
+      "      setTheme: (theme) => set({ theme }),",
+      "    }),",
+      "    {",
+      "      name: '${4:settings-storage}',",
+      "      partialize: (state) => ({ theme: state.theme }),",
+      "    },",
+      "  ),",
+      ");",
+      "$0"
+    ],
+    "description": "Persist a chosen subset of a typed store with partialize. Requires create and persist from zustand.\n\n使用 partialize 持久化类型化 store 中选定的子集；需要从 zustand 导入 create 和 persist。",
+    "scope": "typescript,typescriptreact"
+  },
+  "Zustand JavaScript devtools store": {
+    "prefix": "zustandDevtools",
+    "body": [
+      "const ${1:useCounterStore} = create(",
+      "  devtools(",
+      "    (set) => ({",
+      "      count: ${2:0},",
+      "      increment: () => set((state) => ({ count: state.count + 1 })),",
+      "    }),",
+      "    { name: '${3:CounterStore}' },",
+      "  ),",
+      ");",
+      "$0"
+    ],
+    "description": "Instrument a store with Redux DevTools. Requires create and devtools from zustand.\n\n为 store 接入 Redux DevTools；需要从 zustand 导入 create 和 devtools。",
+    "scope": "javascript,javascriptreact"
+  },
+  "Zustand typed devtools store": {
+    "prefix": "zustandDevtools",
+    "body": [
+      "type ${1:CounterStore} = {",
+      "  count: number;",
+      "  increment: () => void;",
+      "};",
+      "",
+      "const ${2:useCounterStore} = create<${1}>()(",
+      "  devtools(",
+      "    (set) => ({",
+      "      count: ${3:0},",
+      "      increment: () => set((state) => ({ count: state.count + 1 })),",
+      "    }),",
+      "    { name: '${4:CounterStore}' },",
+      "  ),",
+      ");",
+      "$0"
+    ],
+    "description": "Instrument a typed store with Redux DevTools. Requires create and devtools from zustand.\n\n为类型化 store 接入 Redux DevTools；需要从 zustand 导入 create 和 devtools。",
+    "scope": "typescript,typescriptreact"
+  }
+}

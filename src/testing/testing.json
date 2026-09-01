@@ -1,0 +1,225 @@
+{
+  "testing-library component interaction JavaScript": {
+    "prefix": [
+      "rtlComponentInteractionJSX",
+      "rtlTest"
+    ],
+    "body": [
+      "import { describe, expect, it } from 'vitest';",
+      "import { render, screen } from '@testing-library/react';",
+      "import userEvent from '@testing-library/user-event';",
+      "import { ${1:Counter} } from './${1:Counter}';",
+      "",
+      "describe('${1:Counter}', () => {",
+      "  it('${2:updates after a user action}', async () => {",
+      "    const user = userEvent.setup();",
+      "    render(<${1:Counter} />);",
+      "",
+      "    await user.click(screen.getByRole('button', { name: /count/i }));",
+      "",
+      "    expect(screen.getByRole('button', { name: /count: 1/i })).toBeTruthy();",
+      "  });",
+      "});$0"
+    ],
+    "description": "Complete Vitest 4 + React Testing Library 16 + user-event 14 interaction test. It requires Vitest's jsdom environment and a sibling component export.\n\n完整的 Vitest 4 + React Testing Library 16 + user-event 14 交互测试；需要 Vitest 的 jsdom 环境，且需要同级组件导出。",
+    "scope": "javascriptreact",
+    "isFileTemplate": true
+  },
+  "testing-library component interaction TypeScript": {
+    "prefix": [
+      "rtlComponentInteractionTSX",
+      "rtlTest"
+    ],
+    "body": [
+      "import { describe, expect, it } from 'vitest';",
+      "import { render, screen } from '@testing-library/react';",
+      "import userEvent from '@testing-library/user-event';",
+      "import { ${1:Counter} } from './${1:Counter}';",
+      "",
+      "describe('${1:Counter}', () => {",
+      "  it('${2:updates after a user action}', async () => {",
+      "    const user = userEvent.setup();",
+      "    render(<${1:Counter} />);",
+      "",
+      "    await user.click(screen.getByRole('button', { name: /count/i }));",
+      "",
+      "    expect(screen.getByRole('button', { name: /count: 1/i })).toBeTruthy();",
+      "  });",
+      "});$0"
+    ],
+    "description": "Complete TypeScript Vitest 4 + React Testing Library 16 + user-event 14 interaction test. It requires Vitest's jsdom environment and a sibling component export.\n\n完整的 TypeScript Vitest 4 + React Testing Library 16 + user-event 14 交互测试；需要 Vitest 的 jsdom 环境，且需要同级组件导出。",
+    "scope": "typescriptreact",
+    "isFileTemplate": true
+  },
+  "testing-library async UI JavaScript": {
+    "prefix": "rtlAsyncUiJSX",
+    "body": [
+      "import { describe, expect, it } from 'vitest';",
+      "import { render, screen, waitFor } from '@testing-library/react';",
+      "import userEvent from '@testing-library/user-event';",
+      "import { ${1:SaveButton} } from './${1:SaveButton}';",
+      "",
+      "describe('${1:SaveButton}', () => {",
+      "  it('${2:shows its async result}', async () => {",
+      "    const user = userEvent.setup();",
+      "    render(<${1:SaveButton} />);",
+      "",
+      "    await user.click(screen.getByRole('button', { name: /idle/i }));",
+      "",
+      "    await waitFor(() => {",
+      "      expect(screen.getByRole('button', { name: /saved/i })).toBeTruthy();",
+      "    });",
+      "  });",
+      "});$0"
+    ],
+    "description": "Complete async UI test for Vitest 4, RTL 16, and user-event 14. It requires Vitest's jsdom environment and a sibling component export.\n\n面向 Vitest 4、RTL 16 和 user-event 14 的完整异步 UI 测试；需要 Vitest 的 jsdom 环境，并需要同级组件导出。",
+    "scope": "javascriptreact",
+    "isFileTemplate": true
+  },
+  "testing-library async UI TypeScript": {
+    "prefix": "rtlAsyncUiTSX",
+    "body": [
+      "import { describe, expect, it } from 'vitest';",
+      "import { render, screen, waitFor } from '@testing-library/react';",
+      "import userEvent from '@testing-library/user-event';",
+      "import { ${1:SaveButton} } from './${1:SaveButton}';",
+      "",
+      "describe('${1:SaveButton}', () => {",
+      "  it('${2:shows its async result}', async () => {",
+      "    const user = userEvent.setup();",
+      "    render(<${1:SaveButton} />);",
+      "",
+      "    await user.click(screen.getByRole('button', { name: /idle/i }));",
+      "",
+      "    await waitFor(() => {",
+      "      expect(screen.getByRole('button', { name: /saved/i })).toBeTruthy();",
+      "    });",
+      "  });",
+      "});$0"
+    ],
+    "description": "Complete TypeScript async UI test for Vitest 4, RTL 16, and user-event 14. It requires Vitest's jsdom environment and a sibling component export.\n\n面向 Vitest 4、RTL 16 和 user-event 14 的完整 TypeScript 异步 UI 测试；需要 Vitest 的 jsdom 环境，并需要同级组件导出。",
+    "scope": "typescriptreact",
+    "isFileTemplate": true
+  },
+  "testing-library renderHook JavaScript": {
+    "prefix": [
+      "rtlRenderHookJS",
+      "rtlHookTest"
+    ],
+    "body": [
+      "import { describe, expect, it } from 'vitest';",
+      "import { act, renderHook } from '@testing-library/react';",
+      "import { ${1:useCounter} } from './${1:useCounter}';",
+      "",
+      "describe('${1:useCounter}', () => {",
+      "  it('${2:updates hook state}', () => {",
+      "    const { result } = renderHook(() => ${1:useCounter}());",
+      "",
+      "    act(() => {",
+      "      result.current.${3:increment}();",
+      "    });",
+      "",
+      "    expect(result.current.${4:count}).toBe(${5:1});",
+      "  });",
+      "});$0"
+    ],
+    "description": "Complete hook interaction test using RTL 16 renderHook and Vitest 4. It requires a sibling hook export.\n\n使用 RTL 16 renderHook 和 Vitest 4 的完整 Hook 交互测试；需要同级 Hook 导出。",
+    "scope": "javascript,javascriptreact",
+    "isFileTemplate": true
+  },
+  "testing-library renderHook TypeScript": {
+    "prefix": [
+      "rtlRenderHookTS",
+      "rtlHookTest"
+    ],
+    "body": [
+      "import { describe, expect, it } from 'vitest';",
+      "import { act, renderHook } from '@testing-library/react';",
+      "import { ${1:useCounter} } from './${1:useCounter}';",
+      "",
+      "describe('${1:useCounter}', () => {",
+      "  it('${2:updates hook state}', () => {",
+      "    const { result } = renderHook(() => ${1:useCounter}());",
+      "",
+      "    act(() => {",
+      "      result.current.${3:increment}();",
+      "    });",
+      "",
+      "    expect(result.current.${4:count}).toBe(${5:1});",
+      "  });",
+      "});$0"
+    ],
+    "description": "Complete TypeScript hook interaction test using RTL 16 renderHook and Vitest 4. It requires a sibling hook export.\n\n使用 RTL 16 renderHook 和 Vitest 4 的完整 TypeScript Hook 交互测试；需要同级 Hook 导出。",
+    "scope": "typescript,typescriptreact",
+    "isFileTemplate": true
+  },
+  "testing-library Query wrapper JavaScript": {
+    "prefix": [
+      "rtlQueryWrapperJSX",
+      "rtlQueryWrapper"
+    ],
+    "body": [
+      "import { QueryClient, QueryClientProvider } from '@tanstack/react-query';",
+      "",
+      "export function create${1:Query}Wrapper() {",
+      "  const client = new QueryClient({",
+      "    defaultOptions: { queries: { retry: false } },",
+      "  });",
+      "",
+      "  return function ${1:Query}Wrapper({ children }) {",
+      "    return <QueryClientProvider client={client}>{children}</QueryClientProvider>;",
+      "  };",
+      "}",
+      "",
+      "// $0"
+    ],
+    "description": "Create an isolated TanStack Query 5 wrapper for RTL tests. Pass createQueryWrapper() as renderHook's wrapper or RTL render's wrapper.\n\n为 RTL 测试创建隔离的 TanStack Query 5 wrapper；将 createQueryWrapper() 传给 renderHook 或 RTL render 的 wrapper。",
+    "scope": "javascriptreact",
+    "isFileTemplate": true
+  },
+  "testing-library Query wrapper TypeScript": {
+    "prefix": [
+      "rtlQueryWrapperTSX",
+      "rtlQueryWrapper"
+    ],
+    "body": [
+      "import type { PropsWithChildren } from 'react';",
+      "import { QueryClient, QueryClientProvider } from '@tanstack/react-query';",
+      "",
+      "export function create${1:Query}Wrapper() {",
+      "  const client = new QueryClient({",
+      "    defaultOptions: { queries: { retry: false } },",
+      "  });",
+      "",
+      "  return function ${1:Query}Wrapper({ children }: PropsWithChildren) {",
+      "    return <QueryClientProvider client={client}>{children}</QueryClientProvider>;",
+      "  };",
+      "}",
+      "",
+      "// $0"
+    ],
+    "description": "Create an isolated TypeScript TanStack Query 5 wrapper for RTL tests. Pass createQueryWrapper() as renderHook's wrapper or RTL render's wrapper.\n\n为 RTL 测试创建隔离的 TypeScript TanStack Query 5 wrapper；将 createQueryWrapper() 传给 renderHook 或 RTL render 的 wrapper。",
+    "scope": "typescriptreact",
+    "isFileTemplate": true
+  },
+  "testing-library store reset JavaScript": {
+    "prefix": "testStoreResetJS",
+    "body": [
+      "beforeEach(() => {",
+      "  ${1:useStore}.getState().reset();",
+      "});$0"
+    ],
+    "description": "Reset a test store before each case. Requires beforeEach from Vitest and a store exposing getState().reset(), such as a Zustand test store.\n\n每个用例前重置测试 store；需要 Vitest 的 beforeEach，以及暴露 getState().reset() 的 store，例如 Zustand 测试 store。",
+    "scope": "javascript,javascriptreact"
+  },
+  "testing-library store reset TypeScript": {
+    "prefix": "testStoreResetTS",
+    "body": [
+      "beforeEach(() => {",
+      "  ${1:useStore}.getState().reset();",
+      "});$0"
+    ],
+    "description": "Reset a typed test store before each case. Requires beforeEach from Vitest and a store exposing getState().reset(), such as a Zustand test store.\n\n每个用例前重置带类型的测试 store；需要 Vitest 的 beforeEach，以及暴露 getState().reset() 的 store，例如 Zustand 测试 store。",
+    "scope": "typescript,typescriptreact"
+  }
+}

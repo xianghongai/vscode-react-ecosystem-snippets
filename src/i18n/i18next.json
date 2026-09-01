@@ -1,0 +1,213 @@
+{
+  "i18next import useTranslation": {
+    "prefix": "i18nImportUseTranslation",
+    "body": [
+      "import { useTranslation } from 'react-i18next';$0"
+    ],
+    "description": "Import useTranslation from react-i18next.\n\n从 react-i18next 导入 useTranslation。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "i18next import Trans": {
+    "prefix": "i18nImportTrans",
+    "body": [
+      "import { Trans } from 'react-i18next';$0"
+    ],
+    "description": "Import Trans from react-i18next for component interpolation.\n\n从 react-i18next 导入 Trans，用于组件插值。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "i18next local initialization TypeScript": {
+    "prefix": [
+      "i18nInitTS",
+      "i18nInit"
+    ],
+    "body": [
+      "import i18n from 'i18next';",
+      "import { initReactI18next } from 'react-i18next';",
+      "",
+      "export const resources = {",
+      "  en: {",
+      "    common: {",
+      "      greeting: 'Hello, {{name}}!',",
+      "      item_one: '{{count}} item',",
+      "      item_other: '{{count}} items',",
+      "    },",
+      "  },",
+      "  zh: {",
+      "    common: {",
+      "      greeting: '你好，{{name}}！',",
+      "      item_one: '{{count}} 项',",
+      "      item_other: '{{count}} 项',",
+      "    },",
+      "  },",
+      "} as const;",
+      "",
+      "void i18n.use(initReactI18next).init({",
+      "  resources,",
+      "  lng: 'en',",
+      "  fallbackLng: 'en',",
+      "  defaultNS: 'common',",
+      "  interpolation: { escapeValue: false },",
+      "});",
+      "",
+      "export default i18n;$0"
+    ],
+    "description": "Complete i18next 26 + react-i18next 17 local-resource setup. It has no backend dependency; import this module before rendering React.\n\ni18next 26 + react-i18next 17 的本地资源完整初始化；不依赖后端插件，渲染 React 前导入此模块。",
+    "scope": "typescript,typescriptreact",
+    "isFileTemplate": true
+  },
+  "i18next local initialization JavaScript": {
+    "prefix": [
+      "i18nInitJS",
+      "i18nInit"
+    ],
+    "body": [
+      "import i18n from 'i18next';",
+      "import { initReactI18next } from 'react-i18next';",
+      "",
+      "export const resources = {",
+      "  en: {",
+      "    common: {",
+      "      greeting: 'Hello, {{name}}!',",
+      "      item_one: '{{count}} item',",
+      "      item_other: '{{count}} items',",
+      "    },",
+      "  },",
+      "  zh: {",
+      "    common: {",
+      "      greeting: '你好，{{name}}！',",
+      "      item_one: '{{count}} 项',",
+      "      item_other: '{{count}} 项',",
+      "    },",
+      "  },",
+      "};",
+      "",
+      "void i18n.use(initReactI18next).init({",
+      "  resources,",
+      "  lng: 'en',",
+      "  fallbackLng: 'en',",
+      "  defaultNS: 'common',",
+      "  interpolation: { escapeValue: false },",
+      "});",
+      "",
+      "export default i18n;$0"
+    ],
+    "description": "Complete i18next 26 + react-i18next 17 local-resource setup. It has no backend dependency; import this module before rendering React.\n\ni18next 26 + react-i18next 17 的本地资源完整初始化；不依赖后端插件，渲染 React 前导入此模块。",
+    "scope": "javascript,javascriptreact",
+    "isFileTemplate": true
+  },
+  "i18next resource type augmentation": {
+    "prefix": "i18nResourceTypesTS",
+    "body": [
+      "import 'i18next';",
+      "import { resources } from './i18n';",
+      "",
+      "declare module 'i18next' {",
+      "  interface CustomTypeOptions {",
+      "    defaultNS: 'common';",
+      "    resources: (typeof resources)['en'];",
+      "  }",
+      "}$0"
+    ],
+    "description": "TypeScript resource augmentation for the local i18n module. Place in a .d.ts file and adjust ./i18n to the initializer path.\n\n本地 i18n 模块的 TypeScript 资源类型增强；放入 .d.ts 文件，并按初始化模块调整 ./i18n 路径。",
+    "scope": "typescript,typescriptreact",
+    "isFileTemplate": true
+  },
+  "i18next selector type augmentation": {
+    "prefix": "i18nSelectorTypesTS",
+    "body": [
+      "import 'i18next';",
+      "import { resources } from './i18n';",
+      "",
+      "declare module 'i18next' {",
+      "  interface CustomTypeOptions {",
+      "    defaultNS: 'common';",
+      "    resources: (typeof resources)['en'];",
+      "    enableSelector: true;",
+      "  }",
+      "}$0"
+    ],
+    "description": "TypeScript selector-mode augmentation for i18next 26.4+. enableSelector is false by default, so use this instead of the standard resource augmentation, not alongside it.\n\ni18next 26.4+ 的 TypeScript selector 模式增强；enableSelector 默认是 false，应使用它替代普通资源增强，不能同时使用。",
+    "scope": "typescript,typescriptreact",
+    "isFileTemplate": true
+  },
+  "i18next namespace useTranslation": {
+    "prefix": [
+      "i18nUseTranslationNamespace",
+      "i18nUseTranslation"
+    ],
+    "body": [
+      "const { t, i18n } = useTranslation('${1:common}');$0"
+    ],
+    "description": "Get t and the i18n instance for one namespace. Requires useTranslation from react-i18next.\n\n获取一个命名空间的 t 和 i18n 实例；需要从 react-i18next 导入 useTranslation。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "i18next translation interpolation": {
+    "prefix": [
+      "i18nTranslateInterpolation",
+      "i18nT"
+    ],
+    "body": [
+      "t('${1:greeting}', { ${2:name}: '${3:Alex}' });$0"
+    ],
+    "description": "Translate a key with interpolation values. Requires t from useTranslation.\n\n使用插值变量翻译 key；需要来自 useTranslation 的 t。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "i18next plural translation": {
+    "prefix": "i18nTranslatePlural",
+    "body": [
+      "t('${1:item}', { count: ${2:count} });$0"
+    ],
+    "description": "Translate an i18next plural key with count. Requires t from useTranslation and matching _one/_other resource keys.\n\n使用 count 翻译 i18next 复数 key；需要 useTranslation 的 t，以及对应的 _one/_other 资源 key。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "i18next selector translation": {
+    "prefix": "i18nTSelector",
+    "body": [
+      "t(($) => $.${1:greeting}, { ${2:name}: '${3:Alex}' });$0"
+    ],
+    "description": "Translate with i18next selector syntax. Requires the i18nSelectorTypesTS type augmentation from this extension, which enables selector mode in i18next 26.4+.\n\n使用 i18next selector 语法翻译；需要本扩展的 i18nSelectorTypesTS 类型增强，以在 i18next 26.4+ 中启用 selector 模式。",
+    "scope": "typescript,typescriptreact"
+  },
+  "i18next Trans component": {
+    "prefix": "i18nTrans",
+    "body": [
+      "<Trans i18nKey=\"${1:welcome}\" values={{ ${2:name}: '${3:Alex}' }}>$0</Trans>"
+    ],
+    "description": "Render a react-i18next Trans component with values and nested React content. Requires Trans from react-i18next.\n\n渲染带变量和嵌套 React 内容的 react-i18next Trans 组件；需要从 react-i18next 导入 Trans。",
+    "scope": "javascriptreact,typescriptreact"
+  },
+  "i18next change language": {
+    "prefix": "i18nChangeLanguage",
+    "body": [
+      "void i18n.changeLanguage('${1:zh}');$0"
+    ],
+    "description": "Switch the active language. Requires the i18n instance from useTranslation or the local initializer.\n\n切换当前语言；需要 useTranslation 返回的 i18n 实例或本地初始化模块。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "i18next import Translation": {
+    "prefix": "i18nImportTranslation",
+    "body": [
+      "import { Translation } from 'react-i18next';$0"
+    ],
+    "description": "Import Translation from react-i18next for the render-prop form.\n\n从 react-i18next 导入 Translation，用于 render prop 形式。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "i18next namespace translation": {
+    "prefix": "i18nTranslateNamespace",
+    "body": [
+      "t('${1:greeting}', { ns: '${2:common}' });$0"
+    ],
+    "description": "Translate a key from another namespace for one call, without changing the namespace bound by useTranslation. Requires t from useTranslation.\n\n为单次调用指定其他命名空间，不改变 useTranslation 已绑定的命名空间；需要来自 useTranslation 的 t。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "i18next Translation render prop": {
+    "prefix": "i18nTranslationRenderProp",
+    "body": [
+      "<Translation ns={['${1:common}']}>",
+      "  {(t) => <>$0</>}",
+      "</Translation>"
+    ],
+    "description": "Provide t to children through a render prop, for places where a hook cannot be used such as a class component. Requires Translation from react-i18next.\n\n通过 render prop 向子节点提供 t，适用于无法使用 Hook 的场合，例如 class 组件；需要从 react-i18next 导入 Translation。",
+    "scope": "javascriptreact,typescriptreact"
+  }
+}

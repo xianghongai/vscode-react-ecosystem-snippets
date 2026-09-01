@@ -1,0 +1,139 @@
+{
+  "jotai atom (primitive)": {
+    "prefix": "atom",
+    "body": [
+      "const ${1:countAtom} = atom(${2:0});",
+      "$0"
+    ],
+    "description": "Create a primitive atom holding one value. Requires atom from jotai.\n\n创建持有单个值的原子；需要从 jotai 导入 atom。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai atom (read-only derived)": {
+    "prefix": "atom",
+    "body": [
+      "const ${1:doubledAtom} = atom((get) => get(${2:countAtom}) * ${3:2});",
+      "$0"
+    ],
+    "description": "Derive a read-only atom from other atoms; it recomputes when a dependency changes. Requires atom from jotai.\n\n由其他原子派生只读原子，依赖变化时自动重算；需要从 jotai 导入 atom。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai atom (writable derived)": {
+    "prefix": "atom",
+    "body": [
+      "const ${1:upperNameAtom} = atom(",
+      "  (get) => get(${2:nameAtom}).toUpperCase(),",
+      "  (get, set, ${3:nextName}) => {",
+      "    set(${2}, ${3});",
+      "    $0",
+      "  },",
+      ");"
+    ],
+    "description": "Derive an atom with custom write behaviour, so reads and writes can differ. Requires atom from jotai.\n\n派生带自定义写行为的原子，使读与写可以不同；需要从 jotai 导入 atom。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai useAtom": {
+    "prefix": "useAtom",
+    "body": [
+      "const [${1:count}, ${2:setCount}] = useAtom(${3:countAtom});",
+      "$0"
+    ],
+    "description": "Read and write an atom, subscribing this component to its value. Requires useAtom from jotai.\n\n读写原子，并让该组件订阅其值；需要从 jotai 导入 useAtom。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai useAtomValue": {
+    "prefix": "useAtomValue",
+    "body": [
+      "const ${1:count} = useAtomValue(${2:countAtom});",
+      "$0"
+    ],
+    "description": "Read an atom without subscribing to a setter. Requires useAtomValue from jotai.\n\n只读取原子，不获取 setter；需要从 jotai 导入 useAtomValue。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai useSetAtom": {
+    "prefix": "useSetAtom",
+    "body": [
+      "const ${1:setCount} = useSetAtom(${2:countAtom});",
+      "$0"
+    ],
+    "description": "Get an atom's setter without subscribing to its value, so writing does not re-render this component. Requires useSetAtom from jotai.\n\n只取原子的 setter 而不订阅其值，写入不会触发该组件重渲染；需要从 jotai 导入 useSetAtom。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai atomWithStorage": {
+    "prefix": "atomWithStorage",
+    "body": [
+      "const ${1:themeAtom} = atomWithStorage('${2:app:theme}', ${3:'system'});",
+      "$0"
+    ],
+    "description": "Create an atom persisted to localStorage. Requires atomWithStorage from jotai/utils and a browser environment.\n\n创建持久化到 localStorage 的原子；需要从 jotai/utils 导入 atomWithStorage，并运行在浏览器环境。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai selectAtom": {
+    "prefix": "selectAtom",
+    "body": [
+      "const ${1:userNameAtom} = selectAtom(${2:userAtom}, (${3:user}) => ${3}.${4:name});",
+      "$0"
+    ],
+    "description": "Subscribe to one slice of a larger atom, re-rendering only when that slice changes. Requires selectAtom from jotai/utils.\n\n只订阅较大原子中的一个切片，仅该切片变化时才重渲染；需要从 jotai/utils 导入 selectAtom。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai splitAtom": {
+    "prefix": "splitAtom",
+    "body": [
+      "const ${1:todoAtomsAtom} = splitAtom(${2:todosAtom});",
+      "$0"
+    ],
+    "description": "Split a list atom into one atom per item, so a row re-renders without the whole list. Requires splitAtom from jotai/utils.\n\n把列表原子拆成逐项的原子，使单行重渲染不牵动整个列表；需要从 jotai/utils 导入 splitAtom。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai atomFamily": {
+    "prefix": "atomFamily",
+    "body": [
+      "const ${1:todoAtomFamily} = atomFamily((${2:id}) => atom(${3:null}));",
+      "$0"
+    ],
+    "description": "Create atoms keyed by a parameter. Remove entries with its own remove method to avoid unbounded growth. Requires atomFamily from jotai/utils.\n\n按参数创建一族原子；用其 remove 方法清理条目，避免无限增长。需要从 jotai/utils 导入 atomFamily。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai loadable": {
+    "prefix": "loadable",
+    "body": [
+      "const ${1:loadableUserAtom} = loadable(${2:asyncUserAtom});",
+      "$0"
+    ],
+    "description": "Wrap an async atom so it yields loading, hasData or hasError instead of suspending. Requires loadable from jotai/utils.\n\n包裹异步原子，使其返回 loading / hasData / hasError 而不触发 Suspense；需要从 jotai/utils 导入 loadable。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "jotai Provider with store (JavaScript)": {
+    "prefix": "jotaiProvider",
+    "body": [
+      "import { createStore, Provider } from 'jotai';",
+      "",
+      "const ${1:appStore} = createStore();",
+      "",
+      "export function ${2:AtomProvider}({ children }) {",
+      "  return <Provider store={${1}}>{children}</Provider>;",
+      "}",
+      "$0"
+    ],
+    "description": "Scope atoms to an explicit store instead of the implicit global one. Requires jotai 2.\n\n把原子作用域绑定到显式 store，而非隐式全局 store；需要 jotai 2。",
+    "scope": "javascriptreact",
+    "isFileTemplate": true
+  },
+  "jotai Provider with store (TypeScript)": {
+    "prefix": "jotaiProvider",
+    "body": [
+      "import { createStore, Provider } from 'jotai';",
+      "import type { ReactNode } from 'react';",
+      "",
+      "const ${1:appStore} = createStore();",
+      "",
+      "export function ${2:AtomProvider}({ children }: { children: ReactNode }) {",
+      "  return <Provider store={${1}}>{children}</Provider>;",
+      "}",
+      "$0"
+    ],
+    "description": "Scope atoms to an explicit store instead of the implicit global one. Requires jotai 2 and ReactNode from react.\n\n把原子作用域绑定到显式 store，而非隐式全局 store；需要 jotai 2 和 react 的 ReactNode。",
+    "scope": "typescriptreact",
+    "isFileTemplate": true
+  }
+}

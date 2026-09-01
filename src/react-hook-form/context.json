@@ -1,0 +1,84 @@
+{
+  "React Hook Form FormProvider (JavaScript)": {
+    "prefix": "rhfFormProvider",
+    "body": [
+      "export function ${1:ProfileFormProvider}({ children }) {",
+      "  const methods = useForm({",
+      "    defaultValues: { name: '' },",
+      "  });",
+      "",
+      "  return (",
+      "    <FormProvider {...methods}>",
+      "      {children}",
+      "    </FormProvider>",
+      "  );",
+      "}",
+      "$0"
+    ],
+    "description": "Share one form instance with nested field components. Requires FormProvider and useForm from react-hook-form.\n\n将同一个表单实例共享给嵌套字段组件；需要从 react-hook-form 导入 FormProvider 和 useForm。",
+    "scope": "javascriptreact"
+  },
+  "React Hook Form FormProvider (TypeScript)": {
+    "prefix": "rhfFormProvider",
+    "body": [
+      "export function ${1:ProfileFormProvider}({ children }: { children: ReactNode }) {",
+      "  const methods = useForm<${2:ProfileForm}>({",
+      "    defaultValues: { name: '' },",
+      "  });",
+      "",
+      "  return (",
+      "    <FormProvider {...methods}>",
+      "      {children}",
+      "    </FormProvider>",
+      "  );",
+      "}",
+      "$0"
+    ],
+    "description": "Share one typed form instance with nested field components. Requires ReactNode from react, FormProvider and useForm from react-hook-form, and the form value type in scope.\n\n将同一个类型化表单实例共享给嵌套字段组件；需要 react 的 ReactNode、react-hook-form 的 FormProvider 与 useForm，并在作用域中提供表单值类型。",
+    "scope": "typescriptreact"
+  },
+  "React Hook Form useFormContext field (JavaScript)": {
+    "prefix": "rhfFormContextField",
+    "body": [
+      "export function ${1:ProfileNameField}() {",
+      "  const {",
+      "    register,",
+      "    formState: { errors },",
+      "  } = useFormContext();",
+      "",
+      "  return (",
+      "    <p>",
+      "      <label htmlFor=\"profile-name\">${2:Name}</label>",
+      "      <input id=\"profile-name\" {...register('name', { required: 'Enter a name' })} />",
+      "      {errors.name?.message ? <span role=\"alert\">{errors.name.message}</span> : null}",
+      "    </p>",
+      "  );",
+      "}",
+      "$0"
+    ],
+    "description": "Read the surrounding FormProvider instead of threading props. Requires useFormContext from react-hook-form and an ancestor FormProvider.\n\n读取上层 FormProvider，避免逐层传递 props；需要从 react-hook-form 导入 useFormContext，且存在祖先 FormProvider。",
+    "scope": "javascriptreact"
+  },
+  "React Hook Form useFormContext field (TypeScript)": {
+    "prefix": "rhfFormContextField",
+    "body": [
+      "export function ${1:ProfileNameField}() {",
+      "  const {",
+      "    register,",
+      "    formState: { errors },",
+      "  } = useFormContext<${2:ProfileForm}>();",
+      "",
+      "  return (",
+      "    <p>",
+      "      <label htmlFor=\"profile-name\">${3:Name}</label>",
+      "      <input id=\"profile-name\" {...register('name', { required: 'Enter a name' })} />",
+      "      {errors.name?.message ? <span role=\"alert\">{errors.name.message}</span> : null}",
+      "    </p>",
+      "  );",
+      "}",
+      "$0"
+    ],
+    "description": "Read the surrounding typed FormProvider instead of threading props. Requires useFormContext from react-hook-form, an ancestor FormProvider, and the form value type in scope.\n\n读取上层类型化 FormProvider，避免逐层传递 props；需要从 react-hook-form 导入 useFormContext，存在祖先 FormProvider，并在作用域中提供表单值类型。",
+    "scope": "typescriptreact"
+  }
+}
