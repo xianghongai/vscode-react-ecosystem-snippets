@@ -1,32 +1,32 @@
 {
-  "TanStack Query stable provider (JavaScript)": {
-    "prefix": "queryProvider",
-    "body": [
-      "export function ${1:QueryProvider}({ children }) {",
-      "  const [queryClient] = useState(() => new QueryClient({",
-      "    defaultOptions: { queries: { staleTime: ${2:30_000} } },",
-      "  }));",
-      "",
-      "  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;",
-      "}",
-      "$0"
-    ],
-    "description": "Create a stable QueryClient provider. Requires useState from react plus QueryClient and QueryClientProvider from @tanstack/react-query.\n\n创建稳定的 QueryClient Provider；需要 react 的 useState，以及 @tanstack/react-query 的 QueryClient、QueryClientProvider。",
-    "scope": "javascriptreact"
-  },
-  "TanStack Query stable provider (TypeScript)": {
-    "prefix": "queryProvider",
-    "body": [
-      "export function ${1:QueryProvider}({ children }: { children: ReactNode }) {",
-      "  const [queryClient] = useState(() => new QueryClient({",
-      "    defaultOptions: { queries: { staleTime: ${2:30_000} } },",
-      "  }));",
-      "",
-      "  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;",
-      "}",
-      "$0"
-    ],
-    "description": "Create a stable typed QueryClient provider. Requires ReactNode and useState from react plus QueryClient and QueryClientProvider from @tanstack/react-query.\n\n创建稳定的类型化 QueryClient Provider；需要 react 的 ReactNode、useState，以及 @tanstack/react-query 的 QueryClient、QueryClientProvider。",
-    "scope": "typescriptreact"
-  }
+	"TanStack Query stable provider (JavaScript)": {
+		"prefix": "queryProvider",
+		"body": [
+			"export function ${1:QueryProvider}({ children }) {",
+			"  const [queryClient] = useState(() => new QueryClient({",
+			"    defaultOptions: { queries: { staleTime: ${2:30_000} } },",
+			"  }));",
+			"",
+			"  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;",
+			"}",
+			"$0"
+		],
+		"description": "Create a stable QueryClient provider. Requires useState from react plus QueryClient and QueryClientProvider from @tanstack/react-query.\n\n创建稳定的 QueryClient Provider；需要 react 的 useState，以及 @tanstack/react-query 的 QueryClient、QueryClientProvider。",
+		"scope": "javascriptreact"
+	},
+	"TanStack Query stable provider (TypeScript)": {
+		"prefix": "queryProvider",
+		"body": [
+			"export function ${1:QueryProvider}({ children }: { children: ReactNode }) {",
+			"  const [queryClient] = useState(() => new QueryClient({",
+			"    defaultOptions: { queries: { staleTime: ${2:30_000} } },",
+			"  }));",
+			"",
+			"  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;",
+			"}",
+			"$0"
+		],
+		"description": "Create a stable typed QueryClient provider. Requires ReactNode and useState from react plus QueryClient and QueryClientProvider from @tanstack/react-query.\n\n创建稳定的类型化 QueryClient Provider；需要 react 的 ReactNode、useState，以及 @tanstack/react-query 的 QueryClient、QueryClientProvider。",
+		"scope": "typescriptreact"
+	}
 }

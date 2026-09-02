@@ -1,94 +1,73 @@
 {
-  "nuqs useQueryState (string)": {
-    "prefix": [
-      "useQueryState"
-    ],
-    "body": [
-      "const [${1:query}, ${2:setQuery}] = useQueryState('${3:q}');",
-      "$0"
-    ],
-    "description": "Sync one string state with a URL query parameter; the value is null when the parameter is absent. Requires useQueryState from nuqs and a NuqsAdapter above this component.\n\n将一个字符串状态与 URL 查询参数同步，参数不存在时值为 null；需要从 nuqs 导入 useQueryState，且上层存在 NuqsAdapter。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "nuqs useQueryState (parsed with default)": {
-    "prefix": [
-      "useQueryState"
-    ],
-    "body": [
-      "const [${1:page}, ${2:setPage}] = useQueryState('${3:page}', parseAsInteger.withDefault(${4:1}));",
-      "$0"
-    ],
-    "description": "Sync a parsed state with a URL query parameter. A default makes the value non-nullable. Requires useQueryState and a parser from nuqs, plus a NuqsAdapter above this component.\n\n将解析后的状态与 URL 查询参数同步；提供默认值后该值不再可能为 null。需要从 nuqs 导入 useQueryState 与对应 parser，且上层存在 NuqsAdapter。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "nuqs useQueryStates (multiple keys)": {
-    "prefix": "useQueryStates",
-    "body": [
-      "const [{ ${1:page}, ${2:size} }, ${3:setPagination}] = useQueryStates({",
-      "  ${1}: parseAsInteger.withDefault(${4:1}),",
-      "  ${2}: parseAsInteger.withDefault(${5:20}),",
-      "});",
-      "$0"
-    ],
-    "description": "Read and write several URL query parameters as one object, updating them in a single history entry. Requires useQueryStates and parsers from nuqs, plus a NuqsAdapter above this component.\n\n把多个 URL 查询参数作为一个对象读写，并合并为单条历史记录；需要从 nuqs 导入 useQueryStates 与对应 parser，且上层存在 NuqsAdapter。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "nuqs parseAsStringLiteral": {
-    "prefix": "parseAsStringLiteral",
-    "body": [
-      "const ${1:sortParser} = parseAsStringLiteral(['${2:asc}', '${3:desc}']).withDefault('${2}');",
-      "$0"
-    ],
-    "description": "Restrict a query parameter to a fixed set of strings, rejecting anything else. Requires parseAsStringLiteral from nuqs.\n\n把查询参数限定在固定的字符串集合内，其余取值一律拒绝；需要从 nuqs 导入 parseAsStringLiteral。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "nuqs parseAsArrayOf": {
-    "prefix": "parseAsArrayOf",
-    "body": [
-      "const ${1:tagsParser} = parseAsArrayOf(${2:parseAsString}, '${3:,}').withDefault([]);",
-      "$0"
-    ],
-    "description": "Parse a delimited query parameter into an array. Requires parseAsArrayOf and an item parser from nuqs.\n\n把带分隔符的查询参数解析为数组；需要从 nuqs 导入 parseAsArrayOf 及元素 parser。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "nuqs setter options (history and shallow)": {
-    "prefix": [
-      "useQueryState"
-    ],
-    "body": [
-      "await ${1:setPage}(${2:2}, { history: '${3:push}', shallow: ${4:false} });",
-      "$0"
-    ],
-    "description": "Write a query parameter with an explicit history entry, and let the server see the change. The setter returns a promise resolving to the new search params. Requires an existing nuqs setter.\n\n写入查询参数时显式产生历史记录，并让服务端感知该变化；setter 返回解析为新 search params 的 promise。需要已有的 nuqs setter。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "nuqs NuqsAdapter (JavaScript)": {
-    "prefix": "nuqsAdapter",
-    "body": [
-      "import { NuqsAdapter } from 'nuqs/adapters/react';",
-      "",
-      "export function ${1:QueryParamsProvider}({ children }) {",
-      "  return <NuqsAdapter>{children}</NuqsAdapter>;",
-      "}",
-      "$0"
-    ],
-    "description": "Provide the adapter that nuqs 2 requires above any component using its hooks. Swap the import for the adapter matching your router, such as nuqs/adapters/next/app or nuqs/adapters/react-router/v7.\n\n提供 nuqs 2 必需的适配器，需置于所有使用其 Hook 的组件之上；按所用路由改导入路径，例如 nuqs/adapters/next/app 或 nuqs/adapters/react-router/v7。",
-    "scope": "javascriptreact",
-    "isFileTemplate": true
-  },
-  "nuqs NuqsAdapter (TypeScript)": {
-    "prefix": "nuqsAdapter",
-    "body": [
-      "import { NuqsAdapter } from 'nuqs/adapters/react';",
-      "import type { ReactNode } from 'react';",
-      "",
-      "export function ${1:QueryParamsProvider}({ children }: { children: ReactNode }) {",
-      "  return <NuqsAdapter>{children}</NuqsAdapter>;",
-      "}",
-      "$0"
-    ],
-    "description": "Provide the adapter that nuqs 2 requires above any component using its hooks. Swap the import for the adapter matching your router, such as nuqs/adapters/next/app or nuqs/adapters/react-router/v7.\n\n提供 nuqs 2 必需的适配器，需置于所有使用其 Hook 的组件之上；按所用路由改导入路径，例如 nuqs/adapters/next/app 或 nuqs/adapters/react-router/v7。",
-    "scope": "typescriptreact",
-    "isFileTemplate": true
-  }
+	"nuqs useQueryState (string)": {
+		"prefix": ["useQueryState"],
+		"body": ["const [${1:query}, ${2:setQuery}] = useQueryState('${3:q}');", "$0"],
+		"description": "Sync one string state with a URL query parameter; the value is null when the parameter is absent. Requires useQueryState from nuqs and a NuqsAdapter above this component.\n\n将一个字符串状态与 URL 查询参数同步，参数不存在时值为 null；需要从 nuqs 导入 useQueryState，且上层存在 NuqsAdapter。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"nuqs useQueryState (parsed with default)": {
+		"prefix": ["useQueryState"],
+		"body": ["const [${1:page}, ${2:setPage}] = useQueryState('${3:page}', parseAsInteger.withDefault(${4:1}));", "$0"],
+		"description": "Sync a parsed state with a URL query parameter. A default makes the value non-nullable. Requires useQueryState and a parser from nuqs, plus a NuqsAdapter above this component.\n\n将解析后的状态与 URL 查询参数同步；提供默认值后该值不再可能为 null。需要从 nuqs 导入 useQueryState 与对应 parser，且上层存在 NuqsAdapter。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"nuqs useQueryStates (multiple keys)": {
+		"prefix": "useQueryStates",
+		"body": [
+			"const [{ ${1:page}, ${2:size} }, ${3:setPagination}] = useQueryStates({",
+			"  ${1}: parseAsInteger.withDefault(${4:1}),",
+			"  ${2}: parseAsInteger.withDefault(${5:20}),",
+			"});",
+			"$0"
+		],
+		"description": "Read and write several URL query parameters as one object, updating them in a single history entry. Requires useQueryStates and parsers from nuqs, plus a NuqsAdapter above this component.\n\n把多个 URL 查询参数作为一个对象读写，并合并为单条历史记录；需要从 nuqs 导入 useQueryStates 与对应 parser，且上层存在 NuqsAdapter。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"nuqs parseAsStringLiteral": {
+		"prefix": "parseAsStringLiteral",
+		"body": ["const ${1:sortParser} = parseAsStringLiteral(['${2:asc}', '${3:desc}']).withDefault('${2}');", "$0"],
+		"description": "Restrict a query parameter to a fixed set of strings, rejecting anything else. Requires parseAsStringLiteral from nuqs.\n\n把查询参数限定在固定的字符串集合内，其余取值一律拒绝；需要从 nuqs 导入 parseAsStringLiteral。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"nuqs parseAsArrayOf": {
+		"prefix": "parseAsArrayOf",
+		"body": ["const ${1:tagsParser} = parseAsArrayOf(${2:parseAsString}, '${3:,}').withDefault([]);", "$0"],
+		"description": "Parse a delimited query parameter into an array. Requires parseAsArrayOf and an item parser from nuqs.\n\n把带分隔符的查询参数解析为数组；需要从 nuqs 导入 parseAsArrayOf 及元素 parser。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"nuqs setter options (history and shallow)": {
+		"prefix": ["useQueryState"],
+		"body": ["await ${1:setPage}(${2:2}, { history: '${3:push}', shallow: ${4:false} });", "$0"],
+		"description": "Write a query parameter with an explicit history entry, and let the server see the change. The setter returns a promise resolving to the new search params. Requires an existing nuqs setter.\n\n写入查询参数时显式产生历史记录，并让服务端感知该变化；setter 返回解析为新 search params 的 promise。需要已有的 nuqs setter。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"nuqs NuqsAdapter (JavaScript)": {
+		"prefix": "nuqsAdapter",
+		"body": [
+			"import { NuqsAdapter } from 'nuqs/adapters/react';",
+			"",
+			"export function ${1:QueryParamsProvider}({ children }) {",
+			"  return <NuqsAdapter>{children}</NuqsAdapter>;",
+			"}",
+			"$0"
+		],
+		"description": "Provide the adapter that nuqs 2 requires above any component using its hooks. Swap the import for the adapter matching your router, such as nuqs/adapters/next/app or nuqs/adapters/react-router/v7.\n\n提供 nuqs 2 必需的适配器，需置于所有使用其 Hook 的组件之上；按所用路由改导入路径，例如 nuqs/adapters/next/app 或 nuqs/adapters/react-router/v7。",
+		"scope": "javascriptreact",
+		"isFileTemplate": true
+	},
+	"nuqs NuqsAdapter (TypeScript)": {
+		"prefix": "nuqsAdapter",
+		"body": [
+			"import { NuqsAdapter } from 'nuqs/adapters/react';",
+			"import type { ReactNode } from 'react';",
+			"",
+			"export function ${1:QueryParamsProvider}({ children }: { children: ReactNode }) {",
+			"  return <NuqsAdapter>{children}</NuqsAdapter>;",
+			"}",
+			"$0"
+		],
+		"description": "Provide the adapter that nuqs 2 requires above any component using its hooks. Swap the import for the adapter matching your router, such as nuqs/adapters/next/app or nuqs/adapters/react-router/v7.\n\n提供 nuqs 2 必需的适配器，需置于所有使用其 Hook 的组件之上；按所用路由改导入路径，例如 nuqs/adapters/next/app 或 nuqs/adapters/react-router/v7。",
+		"scope": "typescriptreact",
+		"isFileTemplate": true
+	}
 }

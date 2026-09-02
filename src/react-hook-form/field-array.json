@@ -1,64 +1,58 @@
 {
-  "React Hook Form useFieldArray (JavaScript)": {
-    "prefix": [
-      "useFieldArray",
-      "ufa"
-    ],
-    "body": [
-      "export function ${1:ContactListFields}() {",
-      "  const { control, register } = useForm({",
-      "    defaultValues: { contacts: [{ email: '' }] },",
-      "  });",
-      "  const { fields, append, remove } = useFieldArray({ control, name: 'contacts' });",
-      "",
-      "  return (",
-      "    <fieldset>",
-      "      <legend>${2:Contacts}</legend>",
-      "      {fields.map((field, index) => (",
-      "        <p key={field.id}>",
-      "          <label htmlFor={'contact-' + field.id}>Email {index + 1}</label>",
-      "          <input id={'contact-' + field.id} type=\"email\" {...register('contacts.' + index + '.email')} />",
-      "          <button type=\"button\" onClick={() => remove(index)}>Remove</button>",
-      "        </p>",
-      "      ))}",
-      "      <button type=\"button\" onClick={() => append({ email: '' })}>${3:Add contact}</button>",
-      "    </fieldset>",
-      "  );",
-      "}",
-      "$0"
-    ],
-    "description": "Render a repeatable group of fields with stable keys. Requires useForm and useFieldArray from react-hook-form.\n\n渲染带稳定 key 的可重复字段组；需要从 react-hook-form 导入 useForm 和 useFieldArray。",
-    "scope": "javascriptreact"
-  },
-  "React Hook Form useFieldArray (TypeScript)": {
-    "prefix": [
-      "useFieldArray",
-      "ufa"
-    ],
-    "body": [
-      "export function ${1:ContactListFields}() {",
-      "  const { control, register } = useForm<${2:ContactsForm}>({",
-      "    defaultValues: { contacts: [{ email: '' }] },",
-      "  });",
-      "  const { fields, append, remove } = useFieldArray({ control, name: 'contacts' });",
-      "",
-      "  return (",
-      "    <fieldset>",
-      "      <legend>${3:Contacts}</legend>",
-      "      {fields.map((field, index) => (",
-      "        <p key={field.id}>",
-      "          <label htmlFor={'contact-' + field.id}>Email {index + 1}</label>",
-      "          <input id={'contact-' + field.id} type=\"email\" {...register(`contacts.\\${index}.email` as const)} />",
-      "          <button type=\"button\" onClick={() => remove(index)}>Remove</button>",
-      "        </p>",
-      "      ))}",
-      "      <button type=\"button\" onClick={() => append({ email: '' })}>${4:Add contact}</button>",
-      "    </fieldset>",
-      "  );",
-      "}",
-      "$0"
-    ],
-    "description": "Render a typed repeatable group of fields with stable keys. Requires useForm and useFieldArray from react-hook-form and the form value type in scope.\n\n渲染带稳定 key 的类型化可重复字段组；需要从 react-hook-form 导入 useForm、useFieldArray，并在作用域中提供表单值类型。",
-    "scope": "typescriptreact"
-  }
+	"React Hook Form useFieldArray (JavaScript)": {
+		"prefix": ["useFieldArray", "ufa"],
+		"body": [
+			"export function ${1:ContactListFields}() {",
+			"  const { control, register } = useForm({",
+			"    defaultValues: { contacts: [{ email: '' }] },",
+			"  });",
+			"  const { fields, append, remove } = useFieldArray({ control, name: 'contacts' });",
+			"",
+			"  return (",
+			"    <fieldset>",
+			"      <legend>${2:Contacts}</legend>",
+			"      {fields.map((field, index) => (",
+			"        <p key={field.id}>",
+			"          <label htmlFor={'contact-' + field.id}>Email {index + 1}</label>",
+			"          <input id={'contact-' + field.id} type=\"email\" {...register('contacts.' + index + '.email')} />",
+			"          <button type=\"button\" onClick={() => remove(index)}>Remove</button>",
+			"        </p>",
+			"      ))}",
+			"      <button type=\"button\" onClick={() => append({ email: '' })}>${3:Add contact}</button>",
+			"    </fieldset>",
+			"  );",
+			"}",
+			"$0"
+		],
+		"description": "Render a repeatable group of fields with stable keys. Requires useForm and useFieldArray from react-hook-form.\n\n渲染带稳定 key 的可重复字段组；需要从 react-hook-form 导入 useForm 和 useFieldArray。",
+		"scope": "javascriptreact"
+	},
+	"React Hook Form useFieldArray (TypeScript)": {
+		"prefix": ["useFieldArray", "ufa"],
+		"body": [
+			"export function ${1:ContactListFields}() {",
+			"  const { control, register } = useForm<${2:ContactsForm}>({",
+			"    defaultValues: { contacts: [{ email: '' }] },",
+			"  });",
+			"  const { fields, append, remove } = useFieldArray({ control, name: 'contacts' });",
+			"",
+			"  return (",
+			"    <fieldset>",
+			"      <legend>${3:Contacts}</legend>",
+			"      {fields.map((field, index) => (",
+			"        <p key={field.id}>",
+			"          <label htmlFor={'contact-' + field.id}>Email {index + 1}</label>",
+			"          <input id={'contact-' + field.id} type=\"email\" {...register(`contacts.\\${index}.email` as const)} />",
+			"          <button type=\"button\" onClick={() => remove(index)}>Remove</button>",
+			"        </p>",
+			"      ))}",
+			"      <button type=\"button\" onClick={() => append({ email: '' })}>${4:Add contact}</button>",
+			"    </fieldset>",
+			"  );",
+			"}",
+			"$0"
+		],
+		"description": "Render a typed repeatable group of fields with stable keys. Requires useForm and useFieldArray from react-hook-form and the form value type in scope.\n\n渲染带稳定 key 的类型化可重复字段组；需要从 react-hook-form 导入 useForm、useFieldArray，并在作用域中提供表单值类型。",
+		"scope": "typescriptreact"
+	}
 }

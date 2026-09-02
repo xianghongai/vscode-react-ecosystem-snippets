@@ -1,104 +1,88 @@
 {
-  "Immer import produce": {
-    "prefix": "immerImportProduce",
-    "body": [
-      "import { produce } from 'immer';",
-      "$0"
-    ],
-    "description": "Import Immer produce. Place it in the module import section.\n\n导入 Immer 的 produce；放在模块导入区。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "Immer produce state copy": {
-    "prefix": [
-      "immerProduce",
-      "ip"
-    ],
-    "body": [
-      "const ${1:nextState} = produce(${2:state}, (draft) => {",
-      "  draft.${3:count} += 1;",
-      "});",
-      "$0"
-    ],
-    "description": "Create an immutable next state with produce. Requires produce from immer and an existing state value.\n\n使用 produce 创建不可变的新状态；需要从 immer 导入 produce，以及已有的 state 值。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "Immer typed produce state copy": {
-    "prefix": "immerProduceTs",
-    "body": [
-      "const ${1:nextState} = produce<${2:State}>(${3:state}, (draft) => {",
-      "  draft.${4:count} += 1;",
-      "});",
-      "$0"
-    ],
-    "description": "Create a typed immutable state copy with produce. Requires produce from immer and the state type in scope.\n\n使用 produce 创建类型化的不可变状态副本；需要从 immer 导入 produce，并在作用域中提供状态类型。",
-    "scope": "typescript,typescriptreact"
-  },
-  "Immer update nested property": {
-    "prefix": "immerNested",
-    "body": [
-      "const ${1:nextState} = produce(${2:state}, (draft) => {",
-      "  draft.${3:user}.${4:profile}.${5:name} = ${6:'Updated name'};",
-      "});",
-      "$0"
-    ],
-    "description": "Update a nested value safely inside an Immer draft. Requires produce from immer and matching nested fields.\n\n在 Immer draft 中安全更新嵌套值；需要从 immer 导入 produce，以及匹配的嵌套字段。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "Immer insert array item": {
-    "prefix": "immerArrayInsert",
-    "body": [
-      "const ${1:nextState} = produce(${2:state}, (draft) => {",
-      "  draft.${3:items}.splice(${4:0}, 0, ${5:newItem});",
-      "});",
-      "$0"
-    ],
-    "description": "Insert an item into an Immer draft array. Requires produce from immer, an array field, and a compatible item value.\n\n向 Immer draft 数组插入元素；需要从 immer 导入 produce、一个数组字段，以及类型兼容的元素值。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "Immer update array item": {
-    "prefix": "immerArrayUpdate",
-    "body": [
-      "const ${1:nextState} = produce(${2:state}, (draft) => {",
-      "  draft.${3:items}[${4:index}].${5:done} = ${6:true};",
-      "});",
-      "$0"
-    ],
-    "description": "Update an item property in an Immer draft array. Requires a valid item index and matching fields.\n\n更新 Immer draft 数组元素的属性；需要有效的元素索引和匹配的字段。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "Immer delete array item": {
-    "prefix": "immerArrayDelete",
-    "body": [
-      "const ${1:nextState} = produce(${2:state}, (draft) => {",
-      "  draft.${3:items}.splice(${4:index}, 1);",
-      "});",
-      "$0"
-    ],
-    "description": "Remove an item from an Immer draft array by index. Requires produce from immer and a valid array index.\n\n按索引删除 Immer draft 数组元素；需要从 immer 导入 produce，以及有效的数组索引。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "Immer curried producer": {
-    "prefix": "immerCurried",
-    "body": [
-      "const ${1:updateState} = produce((draft, ${2:value}) => {",
-      "  draft.${3:count} = ${2};",
-      "});",
-      "$0"
-    ],
-    "description": "Create a reusable curried Immer producer. Requires produce from immer and compatible draft state.\n\n创建可复用的柯里化 Immer producer；需要从 immer 导入 produce，以及类型兼容的 draft 状态。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "Immer React functional state update": {
-    "prefix": "immerReactUpdate",
-    "body": [
-      "${1:setState}((current) =>",
-      "  produce(current, (draft) => {",
-      "    draft.${2:count} += 1;",
-      "  }),",
-      ");",
-      "$0"
-    ],
-    "description": "Apply an Immer update through a React functional state setter. Requires a useState setter and produce from immer.\n\n通过 React 函数式 setter 应用 Immer 更新；需要 useState 的 setter，以及从 immer 导入 produce。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  }
+	"Immer import produce": {
+		"prefix": "immerImportProduce",
+		"body": ["import { produce } from 'immer';", "$0"],
+		"description": "Import Immer produce. Place it in the module import section.\n\n导入 Immer 的 produce；放在模块导入区。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"Immer produce state copy": {
+		"prefix": ["immerProduce", "ip"],
+		"body": ["const ${1:nextState} = produce(${2:state}, (draft) => {", "  draft.${3:count} += 1;", "});", "$0"],
+		"description": "Create an immutable next state with produce. Requires produce from immer and an existing state value.\n\n使用 produce 创建不可变的新状态；需要从 immer 导入 produce，以及已有的 state 值。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"Immer typed produce state copy": {
+		"prefix": "immerProduceTs",
+		"body": [
+			"const ${1:nextState} = produce<${2:State}>(${3:state}, (draft) => {",
+			"  draft.${4:count} += 1;",
+			"});",
+			"$0"
+		],
+		"description": "Create a typed immutable state copy with produce. Requires produce from immer and the state type in scope.\n\n使用 produce 创建类型化的不可变状态副本；需要从 immer 导入 produce，并在作用域中提供状态类型。",
+		"scope": "typescript,typescriptreact"
+	},
+	"Immer update nested property": {
+		"prefix": "immerNested",
+		"body": [
+			"const ${1:nextState} = produce(${2:state}, (draft) => {",
+			"  draft.${3:user}.${4:profile}.${5:name} = ${6:'Updated name'};",
+			"});",
+			"$0"
+		],
+		"description": "Update a nested value safely inside an Immer draft. Requires produce from immer and matching nested fields.\n\n在 Immer draft 中安全更新嵌套值；需要从 immer 导入 produce，以及匹配的嵌套字段。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"Immer insert array item": {
+		"prefix": "immerArrayInsert",
+		"body": [
+			"const ${1:nextState} = produce(${2:state}, (draft) => {",
+			"  draft.${3:items}.splice(${4:0}, 0, ${5:newItem});",
+			"});",
+			"$0"
+		],
+		"description": "Insert an item into an Immer draft array. Requires produce from immer, an array field, and a compatible item value.\n\n向 Immer draft 数组插入元素；需要从 immer 导入 produce、一个数组字段，以及类型兼容的元素值。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"Immer update array item": {
+		"prefix": "immerArrayUpdate",
+		"body": [
+			"const ${1:nextState} = produce(${2:state}, (draft) => {",
+			"  draft.${3:items}[${4:index}].${5:done} = ${6:true};",
+			"});",
+			"$0"
+		],
+		"description": "Update an item property in an Immer draft array. Requires a valid item index and matching fields.\n\n更新 Immer draft 数组元素的属性；需要有效的元素索引和匹配的字段。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"Immer delete array item": {
+		"prefix": "immerArrayDelete",
+		"body": [
+			"const ${1:nextState} = produce(${2:state}, (draft) => {",
+			"  draft.${3:items}.splice(${4:index}, 1);",
+			"});",
+			"$0"
+		],
+		"description": "Remove an item from an Immer draft array by index. Requires produce from immer and a valid array index.\n\n按索引删除 Immer draft 数组元素；需要从 immer 导入 produce，以及有效的数组索引。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"Immer curried producer": {
+		"prefix": "immerCurried",
+		"body": ["const ${1:updateState} = produce((draft, ${2:value}) => {", "  draft.${3:count} = ${2};", "});", "$0"],
+		"description": "Create a reusable curried Immer producer. Requires produce from immer and compatible draft state.\n\n创建可复用的柯里化 Immer producer；需要从 immer 导入 produce，以及类型兼容的 draft 状态。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"Immer React functional state update": {
+		"prefix": "immerReactUpdate",
+		"body": [
+			"${1:setState}((current) =>",
+			"  produce(current, (draft) => {",
+			"    draft.${2:count} += 1;",
+			"  }),",
+			");",
+			"$0"
+		],
+		"description": "Apply an Immer update through a React functional state setter. Requires a useState setter and produce from immer.\n\n通过 React 函数式 setter 应用 Immer 更新；需要 useState 的 setter，以及从 immer 导入 produce。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	}
 }

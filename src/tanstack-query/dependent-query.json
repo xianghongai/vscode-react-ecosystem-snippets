@@ -1,52 +1,52 @@
 {
-  "TanStack Query dependent query (JavaScript)": {
-    "prefix": "queryDependent",
-    "body": [
-      "export function ${1:ProjectsForUser}({ ${2:userId} }) {",
-      "  const ${3:projectsQuery} = useQuery({",
-      "    queryKey: ['${4:projects}', ${2}],",
-      "    queryFn: ({ signal }) => ${5:getProjects}(${2}, signal),",
-      "    enabled: Boolean(${2}),",
-      "  });",
-      "",
-      "  if (!${2}) {",
-      "    return <p>Select a user first.</p>;",
-      "  }",
-      "",
-      "  return (",
-      "    <ul>",
-      "      {${3}.data?.map((item) => <li key={item.id}>{item.name}</li>)}",
-      "    </ul>",
-      "  );",
-      "}",
-      "$0"
-    ],
-    "description": "Hold a query until its input exists, so it never runs with an undefined key. Requires useQuery from @tanstack/react-query and a fetcher.\n\n在输入就绪前挂起查询，避免以 undefined 作为键发起请求；需要 @tanstack/react-query 的 useQuery，以及请求函数。",
-    "scope": "javascriptreact"
-  },
-  "TanStack Query dependent query (TypeScript)": {
-    "prefix": "queryDependent",
-    "body": [
-      "export function ${1:ProjectsForUser}({ ${2:userId} }: { ${2}: string | undefined }) {",
-      "  const ${3:projectsQuery} = useQuery({",
-      "    queryKey: ['${4:projects}', ${2}],",
-      "    queryFn: ({ signal }) => ${5:getProjects}(${2}, signal),",
-      "    enabled: Boolean(${2}),",
-      "  });",
-      "",
-      "  if (!${2}) {",
-      "    return <p>Select a user first.</p>;",
-      "  }",
-      "",
-      "  return (",
-      "    <ul>",
-      "      {${3}.data?.map((item) => <li key={item.id}>{item.name}</li>)}",
-      "    </ul>",
-      "  );",
-      "}",
-      "$0"
-    ],
-    "description": "Hold a query until its input exists, so it never runs with an undefined key. Requires useQuery from @tanstack/react-query and a fetcher.\n\n在输入就绪前挂起查询，避免以 undefined 作为键发起请求；需要 @tanstack/react-query 的 useQuery，以及请求函数。",
-    "scope": "typescriptreact"
-  }
+	"TanStack Query dependent query (JavaScript)": {
+		"prefix": "queryDependent",
+		"body": [
+			"export function ${1:ProjectsForUser}({ ${2:userId} }) {",
+			"  const ${3:projectsQuery} = useQuery({",
+			"    queryKey: ['${4:projects}', ${2}],",
+			"    queryFn: ({ signal }) => ${5:getProjects}(${2}, signal),",
+			"    enabled: Boolean(${2}),",
+			"  });",
+			"",
+			"  if (!${2}) {",
+			"    return <p>Select a user first.</p>;",
+			"  }",
+			"",
+			"  return (",
+			"    <ul>",
+			"      {${3}.data?.map((item) => <li key={item.id}>{item.name}</li>)}",
+			"    </ul>",
+			"  );",
+			"}",
+			"$0"
+		],
+		"description": "Hold a query until its input exists, so it never runs with an undefined key. Requires useQuery from @tanstack/react-query and a fetcher.\n\n在输入就绪前挂起查询，避免以 undefined 作为键发起请求；需要 @tanstack/react-query 的 useQuery，以及请求函数。",
+		"scope": "javascriptreact"
+	},
+	"TanStack Query dependent query (TypeScript)": {
+		"prefix": "queryDependent",
+		"body": [
+			"export function ${1:ProjectsForUser}({ ${2:userId} }: { ${2}: string | undefined }) {",
+			"  const ${3:projectsQuery} = useQuery({",
+			"    queryKey: ['${4:projects}', ${2}],",
+			"    queryFn: ({ signal }) => ${5:getProjects}(${2}, signal),",
+			"    enabled: Boolean(${2}),",
+			"  });",
+			"",
+			"  if (!${2}) {",
+			"    return <p>Select a user first.</p>;",
+			"  }",
+			"",
+			"  return (",
+			"    <ul>",
+			"      {${3}.data?.map((item) => <li key={item.id}>{item.name}</li>)}",
+			"    </ul>",
+			"  );",
+			"}",
+			"$0"
+		],
+		"description": "Hold a query until its input exists, so it never runs with an undefined key. Requires useQuery from @tanstack/react-query and a fetcher.\n\n在输入就绪前挂起查询，避免以 undefined 作为键发起请求；需要 @tanstack/react-query 的 useQuery，以及请求函数。",
+		"scope": "typescriptreact"
+	}
 }

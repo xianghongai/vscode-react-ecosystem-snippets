@@ -1,44 +1,38 @@
 {
-  "TanStack Query useMutation invalidate (JavaScript)": {
-    "prefix": [
-      "useMutation",
-      "um"
-    ],
-    "body": [
-      "export function ${1:useCreateUser}() {",
-      "  const queryClient = useQueryClient();",
-      "",
-      "  return useMutation({",
-      "    mutationFn: ${2:createUser},",
-      "    onSuccess: async () => {",
-      "      await queryClient.invalidateQueries({ queryKey: ['${3:users}'] });",
-      "      $0",
-      "    },",
-      "  });",
-      "}"
-    ],
-    "description": "Create a mutation that invalidates a cache key after success. Requires useMutation and useQueryClient from @tanstack/react-query.\n\n创建成功后失效缓存键的 mutation；需要 @tanstack/react-query 的 useMutation 和 useQueryClient。",
-    "scope": "javascript,javascriptreact"
-  },
-  "TanStack Query useMutation invalidate (TypeScript)": {
-    "prefix": [
-      "useMutation",
-      "um"
-    ],
-    "body": [
-      "export function ${1:useCreateUser}() {",
-      "  const queryClient = useQueryClient();",
-      "",
-      "  return useMutation({",
-      "    mutationFn: ${2:createUser},",
-      "    onSuccess: async () => {",
-      "      await queryClient.invalidateQueries({ queryKey: ['${3:users}'] });",
-      "      $0",
-      "    },",
-      "  });",
-      "}"
-    ],
-    "description": "Create a typed mutation that invalidates a cache key after success. Requires useMutation and useQueryClient from @tanstack/react-query.\n\n创建成功后失效缓存键的类型化 mutation；需要 @tanstack/react-query 的 useMutation 和 useQueryClient。",
-    "scope": "typescript,typescriptreact"
-  }
+	"TanStack Query useMutation invalidate (JavaScript)": {
+		"prefix": ["useMutation", "um"],
+		"body": [
+			"export function ${1:useCreateUser}() {",
+			"  const queryClient = useQueryClient();",
+			"",
+			"  return useMutation({",
+			"    mutationFn: ${2:createUser},",
+			"    onSuccess: async () => {",
+			"      await queryClient.invalidateQueries({ queryKey: ['${3:users}'] });",
+			"      $0",
+			"    },",
+			"  });",
+			"}"
+		],
+		"description": "Create a mutation that invalidates a cache key after success. Requires useMutation and useQueryClient from @tanstack/react-query.\n\n创建成功后失效缓存键的 mutation；需要 @tanstack/react-query 的 useMutation 和 useQueryClient。",
+		"scope": "javascript,javascriptreact"
+	},
+	"TanStack Query useMutation invalidate (TypeScript)": {
+		"prefix": ["useMutation", "um"],
+		"body": [
+			"export function ${1:useCreateUser}() {",
+			"  const queryClient = useQueryClient();",
+			"",
+			"  return useMutation({",
+			"    mutationFn: ${2:createUser},",
+			"    onSuccess: async () => {",
+			"      await queryClient.invalidateQueries({ queryKey: ['${3:users}'] });",
+			"      $0",
+			"    },",
+			"  });",
+			"}"
+		],
+		"description": "Create a typed mutation that invalidates a cache key after success. Requires useMutation and useQueryClient from @tanstack/react-query.\n\n创建成功后失效缓存键的类型化 mutation；需要 @tanstack/react-query 的 useMutation 和 useQueryClient。",
+		"scope": "typescript,typescriptreact"
+	}
 }

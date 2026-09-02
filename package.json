@@ -1,47 +1,32 @@
 {
   "name": "vscode-react-ecosystem-snippets",
   "displayName": "React Stack Snippets",
+  "version": "1.0.2",
   "description": "Everyday React ecosystem snippets: Zustand, Immer, Zod, React Hook Form, TanStack Query, i18n and testing. React 生态高频片段。",
-  "version": "1.0.1",
-  "publisher": "NicholasHsiang",
-  "license": "MIT",
-  "type": "module",
-  "bugs": {
-    "url": "https://github.com/xianghongai/vscode-react-ecosystem-snippets/issues"
-  },
-  "homepage": "https://github.com/xianghongai/vscode-react-ecosystem-snippets/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xianghongai/vscode-react-ecosystem-snippets/blob/master/README.md"
-  },
-  "engines": {
-    "vscode": "^1.100.0"
-  },
   "categories": [
     "Snippets"
   ],
   "keywords": [
-    "react",
-    "zustand",
-    "immer",
-    "zod",
-    "react-hook-form",
-    "tanstack-query",
     "i18next",
-    "snippets"
+    "immer",
+    "react",
+    "react-hook-form",
+    "snippets",
+    "tanstack-query",
+    "zod",
+    "zustand"
   ],
-  "icon": "art/icon.png",
-  "galleryBanner": {
-    "color": "#0f172a",
-    "theme": "dark"
+  "homepage": "https://github.com/xianghongai/vscode-react-ecosystem-snippets/",
+  "bugs": {
+    "url": "https://github.com/xianghongai/vscode-react-ecosystem-snippets/issues"
   },
-  "contributes": {
-    "snippets": [
-      {
-        "path": "./snippets/index.code-snippets"
-      }
-    ]
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xianghongai/vscode-react-ecosystem-snippets/blob/master/README.md"
   },
+  "publisher": "NicholasHsiang",
+  "type": "module",
   "scripts": {
     "build": "node scripts/build.ts",
     "clean": "rimraf --glob \"*.vsix\" snippets",
@@ -53,9 +38,7 @@
     "test": "vitest run",
     "vscode:prepublish": "pnpm run clean && pnpm run lint && pnpm run test && pnpm run build"
   },
-  "packageManager": "pnpm@11.24.0",
   "devDependencies": {
-    "@babel/parser": "8.0.4",
     "@hookform/resolvers": "^5.9.1",
     "@tanstack/react-query": "^5.102.8",
     "@testing-library/react": "^16.3.3",
@@ -86,5 +69,21 @@
     "vitest": "4.1.11",
     "zod": "^4.5.4",
     "zustand": "^5.0.15"
-  }
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "path": "./snippets/index.code-snippets"
+      }
+    ]
+  },
+  "icon": "art/icon.png",
+  "galleryBanner": {
+    "color": "#0f172a",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "packageManager": "pnpm@11.24.0"
 }

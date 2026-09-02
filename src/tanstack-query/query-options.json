@@ -1,38 +1,32 @@
 {
-  "TanStack Query queryOptions (JavaScript)": {
-    "prefix": [
-      "queryOptions",
-      "qo"
-    ],
-    "body": [
-      "export function ${1:userQueryOptions}(${2:userId}) {",
-      "  return queryOptions({",
-      "    queryKey: ['${3:users}', ${2}],",
-      "    queryFn: ({ signal }) => ${4:getUser}(${2}, { signal }),",
-      "    staleTime: ${5:30_000},",
-      "    $0",
-      "  });",
-      "}"
-    ],
-    "description": "Create reusable queryOptions for one resource. Requires queryOptions from @tanstack/react-query and a fetcher accepting an AbortSignal.\n\n创建单个资源可复用的 queryOptions；需要 @tanstack/react-query 的 queryOptions，以及接受 AbortSignal 的请求函数。",
-    "scope": "javascript,javascriptreact"
-  },
-  "TanStack Query queryOptions (TypeScript)": {
-    "prefix": [
-      "queryOptions",
-      "qo"
-    ],
-    "body": [
-      "export function ${1:userQueryOptions}(${2:userId}: string) {",
-      "  return queryOptions({",
-      "    queryKey: ['${3:users}', ${2}],",
-      "    queryFn: ({ signal }) => ${4:getUser}(${2}, { signal }),",
-      "    staleTime: ${5:30_000},",
-      "    $0",
-      "  });",
-      "}"
-    ],
-    "description": "Create reusable typed queryOptions for one resource. Requires queryOptions from @tanstack/react-query and a fetcher accepting an AbortSignal.\n\n创建单个资源可复用的类型化 queryOptions；需要 @tanstack/react-query 的 queryOptions，以及接受 AbortSignal 的请求函数。",
-    "scope": "typescript,typescriptreact"
-  }
+	"TanStack Query queryOptions (JavaScript)": {
+		"prefix": ["queryOptions", "qo"],
+		"body": [
+			"export function ${1:userQueryOptions}(${2:userId}) {",
+			"  return queryOptions({",
+			"    queryKey: ['${3:users}', ${2}],",
+			"    queryFn: ({ signal }) => ${4:getUser}(${2}, { signal }),",
+			"    staleTime: ${5:30_000},",
+			"    $0",
+			"  });",
+			"}"
+		],
+		"description": "Create reusable queryOptions for one resource. Requires queryOptions from @tanstack/react-query and a fetcher accepting an AbortSignal.\n\n创建单个资源可复用的 queryOptions；需要 @tanstack/react-query 的 queryOptions，以及接受 AbortSignal 的请求函数。",
+		"scope": "javascript,javascriptreact"
+	},
+	"TanStack Query queryOptions (TypeScript)": {
+		"prefix": ["queryOptions", "qo"],
+		"body": [
+			"export function ${1:userQueryOptions}(${2:userId}: string) {",
+			"  return queryOptions({",
+			"    queryKey: ['${3:users}', ${2}],",
+			"    queryFn: ({ signal }) => ${4:getUser}(${2}, { signal }),",
+			"    staleTime: ${5:30_000},",
+			"    $0",
+			"  });",
+			"}"
+		],
+		"description": "Create reusable typed queryOptions for one resource. Requires queryOptions from @tanstack/react-query and a fetcher accepting an AbortSignal.\n\n创建单个资源可复用的类型化 queryOptions；需要 @tanstack/react-query 的 queryOptions，以及接受 AbortSignal 的请求函数。",
+		"scope": "typescript,typescriptreact"
+	}
 }

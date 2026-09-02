@@ -1,36 +1,36 @@
 {
-  "TanStack Query query AbortSignal (JavaScript)": {
-    "prefix": "queryAbortSignal",
-    "body": [
-      "export function ${1:UserSearchResults}({ ${2:term} }) {",
-      "  const ${3:searchQuery} = useQuery({",
-      "    queryKey: ['${4:users}', 'search', ${2}],",
-      "    queryFn: ({ signal }) => ${5:searchUsers}(${2}, { signal }),",
-      "    enabled: ${2}.trim().length > 0,",
-      "  });",
-      "",
-      "  return <p>{${3}.isFetching ? 'Searching…' : (${3}.data?.length ?? 0) + ' results'}</p>;",
-      "}",
-      "$0"
-    ],
-    "description": "Forward the query's AbortSignal so a superseded request is cancelled. Requires useQuery from @tanstack/react-query and a fetcher accepting an AbortSignal.\n\n将查询的 AbortSignal 传给请求函数，使被取代的请求得以取消；需要 @tanstack/react-query 的 useQuery，以及接受 AbortSignal 的请求函数。",
-    "scope": "javascriptreact"
-  },
-  "TanStack Query query AbortSignal (TypeScript)": {
-    "prefix": "queryAbortSignal",
-    "body": [
-      "export function ${1:UserSearchResults}({ ${2:term} }: { ${2}: string }) {",
-      "  const ${3:searchQuery} = useQuery({",
-      "    queryKey: ['${4:users}', 'search', ${2}],",
-      "    queryFn: ({ signal }) => ${5:searchUsers}(${2}, { signal }),",
-      "    enabled: ${2}.trim().length > 0,",
-      "  });",
-      "",
-      "  return <p>{${3}.isFetching ? 'Searching…' : (${3}.data?.length ?? 0) + ' results'}</p>;",
-      "}",
-      "$0"
-    ],
-    "description": "Forward the query's AbortSignal so a superseded request is cancelled. Requires useQuery from @tanstack/react-query and a fetcher accepting an AbortSignal.\n\n将查询的 AbortSignal 传给请求函数，使被取代的请求得以取消；需要 @tanstack/react-query 的 useQuery，以及接受 AbortSignal 的请求函数。",
-    "scope": "typescriptreact"
-  }
+	"TanStack Query query AbortSignal (JavaScript)": {
+		"prefix": "queryAbortSignal",
+		"body": [
+			"export function ${1:UserSearchResults}({ ${2:term} }) {",
+			"  const ${3:searchQuery} = useQuery({",
+			"    queryKey: ['${4:users}', 'search', ${2}],",
+			"    queryFn: ({ signal }) => ${5:searchUsers}(${2}, { signal }),",
+			"    enabled: ${2}.trim().length > 0,",
+			"  });",
+			"",
+			"  return <p>{${3}.isFetching ? 'Searching…' : (${3}.data?.length ?? 0) + ' results'}</p>;",
+			"}",
+			"$0"
+		],
+		"description": "Forward the query's AbortSignal so a superseded request is cancelled. Requires useQuery from @tanstack/react-query and a fetcher accepting an AbortSignal.\n\n将查询的 AbortSignal 传给请求函数，使被取代的请求得以取消；需要 @tanstack/react-query 的 useQuery，以及接受 AbortSignal 的请求函数。",
+		"scope": "javascriptreact"
+	},
+	"TanStack Query query AbortSignal (TypeScript)": {
+		"prefix": "queryAbortSignal",
+		"body": [
+			"export function ${1:UserSearchResults}({ ${2:term} }: { ${2}: string }) {",
+			"  const ${3:searchQuery} = useQuery({",
+			"    queryKey: ['${4:users}', 'search', ${2}],",
+			"    queryFn: ({ signal }) => ${5:searchUsers}(${2}, { signal }),",
+			"    enabled: ${2}.trim().length > 0,",
+			"  });",
+			"",
+			"  return <p>{${3}.isFetching ? 'Searching…' : (${3}.data?.length ?? 0) + ' results'}</p>;",
+			"}",
+			"$0"
+		],
+		"description": "Forward the query's AbortSignal so a superseded request is cancelled. Requires useQuery from @tanstack/react-query and a fetcher accepting an AbortSignal.\n\n将查询的 AbortSignal 传给请求函数，使被取代的请求得以取消；需要 @tanstack/react-query 的 useQuery，以及接受 AbortSignal 的请求函数。",
+		"scope": "typescriptreact"
+	}
 }

@@ -1,62 +1,54 @@
 {
-  "clsx import": {
-    "prefix": "clsxImport",
-    "body": [
-      "import { clsx } from 'clsx';$0"
-    ],
-    "description": "Import clsx 2 for conditional class names.\n\n导入 clsx 2 以组合条件 className。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "clsx conditional classes": {
-    "prefix": "clsxConditional",
-    "body": [
-      "clsx('${1:base}', { '${2:active}': ${3:isActive} });$0"
-    ],
-    "description": "Compose conditional class names. Requires clsx from clsx.\n\n组合条件 className；需要从 clsx 导入 clsx。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "tailwind-merge import": {
-    "prefix": "twMergeImport",
-    "body": [
-      "import { twMerge } from 'tailwind-merge';$0"
-    ],
-    "description": "Import tailwind-merge 3 to resolve conflicting Tailwind utility classes.\n\n导入 tailwind-merge 3 以解决冲突的 Tailwind 工具类。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "tailwind-merge classes": {
-    "prefix": "twMergeClasses",
-    "body": [
-      "twMerge('${1:px-2}', '${2:px-4}');$0"
-    ],
-    "description": "Merge Tailwind utility classes and keep the winning conflict. Requires twMerge from tailwind-merge.\n\n合并 Tailwind 工具类并保留冲突中的最终值；需要从 tailwind-merge 导入 twMerge。",
-    "scope": "javascript,javascriptreact,typescript,typescriptreact"
-  },
-  "cn utility JavaScript": {
-    "prefix": "cnUtilityJS",
-    "body": [
-      "import { clsx } from 'clsx';",
-      "import { twMerge } from 'tailwind-merge';",
-      "",
-      "export function cn(...inputs) {",
-      "  return twMerge(clsx(inputs));",
-      "}$0"
-    ],
-    "description": "Complete JavaScript cn utility. Requires clsx 2, tailwind-merge 3, and a Tailwind CSS 4 project for its utility-class semantics.\n\n完整的 JavaScript cn 工具；需要 clsx 2、tailwind-merge 3，以及使用 Tailwind CSS 4 的项目来获得工具类语义。",
-    "scope": "javascript,javascriptreact",
-    "isFileTemplate": true
-  },
-  "cn utility TypeScript": {
-    "prefix": "cnUtilityTS",
-    "body": [
-      "import { clsx, type ClassValue } from 'clsx';",
-      "import { twMerge } from 'tailwind-merge';",
-      "",
-      "export function cn(...inputs: ClassValue[]) {",
-      "  return twMerge(clsx(inputs));",
-      "}$0"
-    ],
-    "description": "Complete TypeScript cn utility. Requires clsx 2, tailwind-merge 3, and a Tailwind CSS 4 project for its utility-class semantics.\n\n完整的 TypeScript cn 工具；需要 clsx 2、tailwind-merge 3，以及使用 Tailwind CSS 4 的项目来获得工具类语义。",
-    "scope": "typescript,typescriptreact",
-    "isFileTemplate": true
-  }
+	"clsx import": {
+		"prefix": "clsxImport",
+		"body": ["import { clsx } from 'clsx';$0"],
+		"description": "Import clsx 2 for conditional class names.\n\n导入 clsx 2 以组合条件 className。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"clsx conditional classes": {
+		"prefix": "clsxConditional",
+		"body": ["clsx('${1:base}', { '${2:active}': ${3:isActive} });$0"],
+		"description": "Compose conditional class names. Requires clsx from clsx.\n\n组合条件 className；需要从 clsx 导入 clsx。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"tailwind-merge import": {
+		"prefix": "twMergeImport",
+		"body": ["import { twMerge } from 'tailwind-merge';$0"],
+		"description": "Import tailwind-merge 3 to resolve conflicting Tailwind utility classes.\n\n导入 tailwind-merge 3 以解决冲突的 Tailwind 工具类。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"tailwind-merge classes": {
+		"prefix": "twMergeClasses",
+		"body": ["twMerge('${1:px-2}', '${2:px-4}');$0"],
+		"description": "Merge Tailwind utility classes and keep the winning conflict. Requires twMerge from tailwind-merge.\n\n合并 Tailwind 工具类并保留冲突中的最终值；需要从 tailwind-merge 导入 twMerge。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
+	},
+	"cn utility JavaScript": {
+		"prefix": "cnUtilityJS",
+		"body": [
+			"import { clsx } from 'clsx';",
+			"import { twMerge } from 'tailwind-merge';",
+			"",
+			"export function cn(...inputs) {",
+			"  return twMerge(clsx(inputs));",
+			"}$0"
+		],
+		"description": "Complete JavaScript cn utility. Requires clsx 2, tailwind-merge 3, and a Tailwind CSS 4 project for its utility-class semantics.\n\n完整的 JavaScript cn 工具；需要 clsx 2、tailwind-merge 3，以及使用 Tailwind CSS 4 的项目来获得工具类语义。",
+		"scope": "javascript,javascriptreact",
+		"isFileTemplate": true
+	},
+	"cn utility TypeScript": {
+		"prefix": "cnUtilityTS",
+		"body": [
+			"import { clsx, type ClassValue } from 'clsx';",
+			"import { twMerge } from 'tailwind-merge';",
+			"",
+			"export function cn(...inputs: ClassValue[]) {",
+			"  return twMerge(clsx(inputs));",
+			"}$0"
+		],
+		"description": "Complete TypeScript cn utility. Requires clsx 2, tailwind-merge 3, and a Tailwind CSS 4 project for its utility-class semantics.\n\n完整的 TypeScript cn 工具；需要 clsx 2、tailwind-merge 3，以及使用 Tailwind CSS 4 的项目来获得工具类语义。",
+		"scope": "typescript,typescriptreact",
+		"isFileTemplate": true
+	}
 }

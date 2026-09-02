@@ -1,44 +1,44 @@
 {
-  "TanStack Query prefetch on intent (JavaScript)": {
-    "prefix": "queryPrefetch",
-    "body": [
-      "export function ${1:UserLink}({ ${2:userId} }) {",
-      "  const queryClient = useQueryClient();",
-      "",
-      "  const ${3:prefetchUser} = () => {",
-      "    void queryClient.prefetchQuery(${4:userQueryOptions}(${2}));",
-      "  };",
-      "",
-      "  return (",
-      "    <button type=\"button\" onMouseEnter={${3}} onFocus={${3}}>",
-      "      ${5:Open user}",
-      "    </button>",
-      "  );",
-      "}",
-      "$0"
-    ],
-    "description": "Warm the cache on hover and focus so the next navigation renders immediately. Requires useQueryClient from @tanstack/react-query and a queryOptions factory.\n\n在悬停与聚焦时预热缓存，使下一次导航立即渲染；需要 @tanstack/react-query 的 useQueryClient，以及一个 queryOptions 工厂函数。",
-    "scope": "javascriptreact"
-  },
-  "TanStack Query prefetch on intent (TypeScript)": {
-    "prefix": "queryPrefetch",
-    "body": [
-      "export function ${1:UserLink}({ ${2:userId} }: { ${2}: string }) {",
-      "  const queryClient = useQueryClient();",
-      "",
-      "  const ${3:prefetchUser} = () => {",
-      "    void queryClient.prefetchQuery(${4:userQueryOptions}(${2}));",
-      "  };",
-      "",
-      "  return (",
-      "    <button type=\"button\" onMouseEnter={${3}} onFocus={${3}}>",
-      "      ${5:Open user}",
-      "    </button>",
-      "  );",
-      "}",
-      "$0"
-    ],
-    "description": "Warm the cache on hover and focus so the next navigation renders immediately. Requires useQueryClient from @tanstack/react-query and a queryOptions factory.\n\n在悬停与聚焦时预热缓存，使下一次导航立即渲染；需要 @tanstack/react-query 的 useQueryClient，以及一个 queryOptions 工厂函数。",
-    "scope": "typescriptreact"
-  }
+	"TanStack Query prefetch on intent (JavaScript)": {
+		"prefix": "queryPrefetch",
+		"body": [
+			"export function ${1:UserLink}({ ${2:userId} }) {",
+			"  const queryClient = useQueryClient();",
+			"",
+			"  const ${3:prefetchUser} = () => {",
+			"    void queryClient.prefetchQuery(${4:userQueryOptions}(${2}));",
+			"  };",
+			"",
+			"  return (",
+			"    <button type=\"button\" onMouseEnter={${3}} onFocus={${3}}>",
+			"      ${5:Open user}",
+			"    </button>",
+			"  );",
+			"}",
+			"$0"
+		],
+		"description": "Warm the cache on hover and focus so the next navigation renders immediately. Requires useQueryClient from @tanstack/react-query and a queryOptions factory.\n\n在悬停与聚焦时预热缓存，使下一次导航立即渲染；需要 @tanstack/react-query 的 useQueryClient，以及一个 queryOptions 工厂函数。",
+		"scope": "javascriptreact"
+	},
+	"TanStack Query prefetch on intent (TypeScript)": {
+		"prefix": "queryPrefetch",
+		"body": [
+			"export function ${1:UserLink}({ ${2:userId} }: { ${2}: string }) {",
+			"  const queryClient = useQueryClient();",
+			"",
+			"  const ${3:prefetchUser} = () => {",
+			"    void queryClient.prefetchQuery(${4:userQueryOptions}(${2}));",
+			"  };",
+			"",
+			"  return (",
+			"    <button type=\"button\" onMouseEnter={${3}} onFocus={${3}}>",
+			"      ${5:Open user}",
+			"    </button>",
+			"  );",
+			"}",
+			"$0"
+		],
+		"description": "Warm the cache on hover and focus so the next navigation renders immediately. Requires useQueryClient from @tanstack/react-query and a queryOptions factory.\n\n在悬停与聚焦时预热缓存，使下一次导航立即渲染；需要 @tanstack/react-query 的 useQueryClient，以及一个 queryOptions 工厂函数。",
+		"scope": "typescriptreact"
+	}
 }
