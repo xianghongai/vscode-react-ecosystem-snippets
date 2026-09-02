@@ -1,45 +1,30 @@
 {
   "Zustand import create": {
     "prefix": "zustandImportCreate",
-    "body": [
-      "import { create } from 'zustand';",
-      "$0"
-    ],
+    "body": ["import { create } from 'zustand';", "$0"],
     "description": "Import Zustand create. Place it in the module import section.\n\n导入 Zustand 的 create；放在模块导入区。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "Zustand import useShallow": {
     "prefix": "zustandImportShallow",
-    "body": [
-      "import { useShallow } from 'zustand/react/shallow';",
-      "$0"
-    ],
+    "body": ["import { useShallow } from 'zustand/react/shallow';", "$0"],
     "description": "Import the useShallow selector helper. Place it in the module import section.\n\n导入 useShallow selector 辅助函数；放在模块导入区。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "Zustand import persist middleware": {
     "prefix": "zustandImportPersist",
-    "body": [
-      "import { persist } from 'zustand/middleware';",
-      "$0"
-    ],
+    "body": ["import { persist } from 'zustand/middleware';", "$0"],
     "description": "Import the persist middleware. Place it in the module import section.\n\n导入 persist 中间件；放在模块导入区。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "Zustand import devtools middleware": {
     "prefix": "zustandImportDevtools",
-    "body": [
-      "import { devtools } from 'zustand/middleware';",
-      "$0"
-    ],
+    "body": ["import { devtools } from 'zustand/middleware';", "$0"],
     "description": "Import the devtools middleware. Place it in the module import section.\n\n导入 devtools 中间件；放在模块导入区。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "Zustand typed counter store file": {
-    "prefix": [
-      "zustandStore",
-      "zs"
-    ],
+    "prefix": ["zustandStore", "zs"],
     "body": [
       "import { create } from 'zustand';",
       "",
@@ -66,10 +51,7 @@
     "isFileTemplate": true
   },
   "Zustand JavaScript counter store file": {
-    "prefix": [
-      "zustandStore",
-      "zs"
-    ],
+    "prefix": ["zustandStore", "zs"],
     "body": [
       "import { create } from 'zustand';",
       "",
@@ -90,19 +72,13 @@
   },
   "Zustand select state": {
     "prefix": "zustandSelect",
-    "body": [
-      "const ${1:count} = ${2:useCounterStore}((state) => state.${1});",
-      "$0"
-    ],
+    "body": ["const ${1:count} = ${2:useCounterStore}((state) => state.${1});", "$0"],
     "description": "Select one state field in a React component. Requires an existing bound store hook.\n\n在 React 组件中选择一个状态字段；需要已有的绑定 store Hook。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "Zustand select action": {
     "prefix": "zustandAction",
-    "body": [
-      "const ${1:increment} = ${2:useCounterStore}((state) => state.${1});",
-      "$0"
-    ],
+    "body": ["const ${1:increment} = ${2:useCounterStore}((state) => state.${1});", "$0"],
     "description": "Select one action in a React component. Requires an existing bound store hook.\n\n在 React 组件中选择一个 action；需要已有的绑定 store Hook。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
@@ -119,10 +95,7 @@
   },
   "Zustand reset state action": {
     "prefix": "zustandReset",
-    "body": [
-      "reset: () => set(${1:initialState}),",
-      "$0"
-    ],
+    "body": ["reset: () => set(${1:initialState}),", "$0"],
     "description": "Add a reset action to a state creator. Place it inside the object returned by create, and define initialState outside it.\n\n为 state creator 添加 reset action；放在 create 返回的对象内部，并在其外部定义 initialState。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },

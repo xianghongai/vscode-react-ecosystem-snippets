@@ -1,9 +1,6 @@
 {
   "React Hook Form useWatch preview (JavaScript)": {
-    "prefix": [
-      "useWatch",
-      "uw"
-    ],
+    "prefix": ["useWatch", "uw"],
     "body": [
       "export function ${1:DisplayNamePreview}() {",
       "  const { control, register } = useForm({",
@@ -30,10 +27,7 @@
     "scope": "javascriptreact"
   },
   "React Hook Form useWatch preview (TypeScript)": {
-    "prefix": [
-      "useWatch",
-      "uw"
-    ],
+    "prefix": ["useWatch", "uw"],
     "body": [
       "export function ${1:DisplayNamePreview}() {",
       "  const { control, register } = useForm<${2:NameForm}>({",

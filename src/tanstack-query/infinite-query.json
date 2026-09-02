@@ -1,9 +1,6 @@
 {
   "TanStack Query useInfiniteQuery (JavaScript)": {
-    "prefix": [
-      "useInfiniteQuery",
-      "uiq"
-    ],
+    "prefix": ["useInfiniteQuery", "uiq"],
     "body": [
       "export function ${1:InfiniteUserList}() {",
       "  const ${2:usersQuery} = useInfiniteQuery({",
@@ -36,10 +33,7 @@
     "scope": "javascriptreact"
   },
   "TanStack Query useInfiniteQuery (TypeScript)": {
-    "prefix": [
-      "useInfiniteQuery",
-      "uiq"
-    ],
+    "prefix": ["useInfiniteQuery", "uiq"],
     "body": [
       "export function ${1:InfiniteUserList}() {",
       "  const ${2:usersQuery} = useInfiniteQuery({",

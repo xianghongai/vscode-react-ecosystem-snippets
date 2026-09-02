@@ -1,9 +1,7 @@
 {
   "react-error-boundary import": {
     "prefix": "reactErrorBoundaryImport",
-    "body": [
-      "import { ErrorBoundary } from 'react-error-boundary';$0"
-    ],
+    "body": ["import { ErrorBoundary } from 'react-error-boundary';$0"],
     "description": "Import ErrorBoundary from react-error-boundary 6.\n\n从 react-error-boundary 6 导入 ErrorBoundary。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },

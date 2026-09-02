@@ -1,104 +1,67 @@
 {
   "usehooks-ts useDebounceValue": {
     "prefix": "useDebounceValue",
-    "body": [
-      "const [${2:debouncedValue}, ${3:setDebouncedValue}] = useDebounceValue(${1:value}, ${4:500});",
-      "$0"
-    ],
+    "body": ["const [${2:debouncedValue}, ${3:setDebouncedValue}] = useDebounceValue(${1:value}, ${4:500});", "$0"],
     "description": "Debounce a value and get a setter for it. Requires useDebounceValue from usehooks-ts.\n\n防抖一个值，并获得它的 setter；需要从 usehooks-ts 导入 useDebounceValue。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useDebounceCallback": {
     "prefix": "useDebounceCallback",
-    "body": [
-      "const ${1:runSearch} = useDebounceCallback((${2:value}) => {",
-      "  $0",
-      "}, ${3:500});"
-    ],
+    "body": ["const ${1:runSearch} = useDebounceCallback((${2:value}) => {", "  $0", "}, ${3:500});"],
     "description": "Create a debounced callback that also exposes cancel and flush. Requires useDebounceCallback from usehooks-ts.\n\n创建带 cancel 与 flush 的防抖回调；需要从 usehooks-ts 导入 useDebounceCallback。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useBoolean": {
     "prefix": "useBoolean",
-    "body": [
-      "const { value: ${1:isOpen}, setTrue, setFalse, toggle } = useBoolean(${2:false});",
-      "$0"
-    ],
+    "body": ["const { value: ${1:isOpen}, setTrue, setFalse, toggle } = useBoolean(${2:false});", "$0"],
     "description": "Manage a boolean with stable actions. This hook returns an object, unlike the ahooks hook of the same name which returns a tuple. Requires useBoolean from usehooks-ts.\n\n使用稳定操作管理布尔值；该 Hook 返回对象，与 ahooks 同名 Hook 返回数组不同。需要从 usehooks-ts 导入 useBoolean。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useToggle": {
     "prefix": "useToggle",
-    "body": [
-      "const [${1:isOpen}, ${2:toggleOpen}, ${3:setOpen}] = useToggle(${4:false});",
-      "$0"
-    ],
+    "body": ["const [${1:isOpen}, ${2:toggleOpen}, ${3:setOpen}] = useToggle(${4:false});", "$0"],
     "description": "Manage a boolean as a tuple of value, toggle and setter. Requires useToggle from usehooks-ts.\n\n以「值、toggle、setter」三元组管理布尔值；需要从 usehooks-ts 导入 useToggle。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useLocalStorage": {
     "prefix": "useLocalStorage",
-    "body": [
-      "const [${2:value}, ${3:setValue}, ${4:removeValue}] = useLocalStorage('${1:app:key}', ${5:null});",
-      "$0"
-    ],
+    "body": ["const [${2:value}, ${3:setValue}, ${4:removeValue}] = useLocalStorage('${1:app:key}', ${5:null});", "$0"],
     "description": "Persist state to localStorage, with a remover. Set initializeWithValue to false for server rendering. Requires useLocalStorage from usehooks-ts and a browser environment.\n\n将状态持久化到 localStorage 并提供清除函数；服务端渲染时将 initializeWithValue 设为 false。需要从 usehooks-ts 导入 useLocalStorage，并运行在浏览器环境。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useOnClickOutside": {
     "prefix": "useOnClickOutside",
-    "body": [
-      "useOnClickOutside(${1:targetRef}, (${2:event}) => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["useOnClickOutside(${1:targetRef}, (${2:event}) => {", "  $0", "});"],
     "description": "Run a handler for clicks outside one ref or an array of refs. Requires useOnClickOutside from usehooks-ts and a target ref.\n\n点击单个 ref 或一组 ref 之外时执行回调；需要从 usehooks-ts 导入 useOnClickOutside 和目标 ref。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useEventListener": {
     "prefix": "useEventListener",
-    "body": [
-      "useEventListener('${1:keydown}', (${2:event}) => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["useEventListener('${1:keydown}', (${2:event}) => {", "  $0", "});"],
     "description": "Subscribe to a DOM event with automatic cleanup; the target defaults to window, or pass a ref as the third argument. Requires useEventListener from usehooks-ts.\n\n订阅 DOM 事件并自动清理，目标默认为 window，也可将 ref 作为第三个参数传入；需要从 usehooks-ts 导入 useEventListener。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useCounter": {
     "prefix": "useCounter",
-    "body": [
-      "const { count: ${1:count}, increment, decrement, reset } = useCounter(${2:0});",
-      "$0"
-    ],
+    "body": ["const { count: ${1:count}, increment, decrement, reset } = useCounter(${2:0});", "$0"],
     "description": "Manage a numeric counter. This hook returns an object, unlike the ahooks and react-use hooks of the same name which return a tuple. Requires useCounter from usehooks-ts.\n\n管理数值计数器；该 Hook 返回对象，与 ahooks、react-use 同名 Hook 返回数组不同。需要从 usehooks-ts 导入 useCounter。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useMediaQuery": {
     "prefix": "useMediaQuery",
-    "body": [
-      "const ${1:isWideScreen} = useMediaQuery('${2:(min-width: 768px)}');",
-      "$0"
-    ],
+    "body": ["const ${1:isWideScreen} = useMediaQuery('${2:(min-width: 768px)}');", "$0"],
     "description": "Track a CSS media query. Requires useMediaQuery from usehooks-ts.\n\n跟踪 CSS 媒体查询；需要从 usehooks-ts 导入 useMediaQuery。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useCopyToClipboard": {
     "prefix": "useCopyToClipboard",
-    "body": [
-      "const [${1:copiedText}, ${2:copyToClipboard}] = useCopyToClipboard();",
-      "$0"
-    ],
+    "body": ["const [${1:copiedText}, ${2:copyToClipboard}] = useCopyToClipboard();", "$0"],
     "description": "Copy text to the clipboard and read the last copied value. Requires useCopyToClipboard from usehooks-ts and a secure context.\n\n复制文本到剪贴板并读取上次复制的值；需要从 usehooks-ts 导入 useCopyToClipboard，并运行在安全上下文中。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "usehooks-ts useInterval": {
     "prefix": "useInterval",
-    "body": [
-      "useInterval(() => {",
-      "  $0",
-      "}, ${1:1000});"
-    ],
+    "body": ["useInterval(() => {", "  $0", "}, ${1:1000});"],
     "description": "Run a callback on an interval; pass null as the delay to pause it. Requires useInterval from usehooks-ts.\n\n按间隔执行回调，delay 传 null 可暂停；需要从 usehooks-ts 导入 useInterval。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   }

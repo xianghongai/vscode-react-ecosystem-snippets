@@ -129,7 +129,7 @@ Prefixes follow three patterns:
 | `nuqsAdapter`          |       | Provide the adapter that nuqs 2 requires above any component using its hooks                       |
 | `parseAsArrayOf`       |       | Parse a delimited query parameter into an array                                                    |
 | `parseAsStringLiteral` |       | Restrict a query parameter to a fixed set of strings, rejecting anything else                      |
-| `useQueryState`        | `uqs` | Sync one string state with a URL query parameter; the value is null when the parameter is absent   |
+| `useQueryState`        |       | Sync one string state with a URL query parameter; the value is null when the parameter is absent   |
 | `useQueryStates`       |       | Read and write several URL query parameters as one object, updating them in a single history entry |
 
 ### i18n

@@ -1,9 +1,6 @@
 {
   "React Hook Form useForm native fields (JavaScript)": {
-    "prefix": [
-      "useForm",
-      "uf"
-    ],
+    "prefix": ["useForm", "uf"],
     "body": [
       "export function ${1:ProfileFormFields}() {",
       "  const {",
@@ -33,10 +30,7 @@
     "scope": "javascriptreact"
   },
   "React Hook Form useForm native fields (TypeScript)": {
-    "prefix": [
-      "useForm",
-      "uf"
-    ],
+    "prefix": ["useForm", "uf"],
     "body": [
       "export function ${1:ProfileFormFields}() {",
       "  const {",

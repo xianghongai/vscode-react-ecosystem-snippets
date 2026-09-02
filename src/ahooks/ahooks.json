@@ -1,48 +1,31 @@
 {
   "ahooks useDebounce (debounced value)": {
     "prefix": "useDebounce",
-    "body": [
-      "const ${2:debouncedValue} = useDebounce(${1:value}, { wait: ${3:500} });",
-      "$0"
-    ],
+    "body": ["const ${2:debouncedValue} = useDebounce(${1:value}, { wait: ${3:500} });", "$0"],
     "description": "Debounce a changing value. This hook debounces a value, unlike the react-use hook of the same name which debounces an effect. Requires useDebounce from ahooks.\n\n防抖一个变化中的值；该 Hook 防抖的是值，与 react-use 同名 Hook 防抖副作用不同。需要从 ahooks 导入 useDebounce。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "ahooks useDebounceFn": {
     "prefix": "useDebounceFn",
-    "body": [
-      "const { run: ${1:runSearch} } = useDebounceFn((${2:value}) => {",
-      "  $0",
-      "}, { wait: ${3:500} });"
-    ],
+    "body": ["const { run: ${1:runSearch} } = useDebounceFn((${2:value}) => {", "  $0", "}, { wait: ${3:500} });"],
     "description": "Create a debounced function while keeping the latest closure. Requires useDebounceFn from ahooks.\n\n创建保持最新闭包的防抖函数；需要从 ahooks 导入 useDebounceFn。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "ahooks useThrottle (throttled value)": {
     "prefix": "useThrottle",
-    "body": [
-      "const ${2:throttledValue} = useThrottle(${1:value}, { wait: ${3:500} });",
-      "$0"
-    ],
+    "body": ["const ${2:throttledValue} = useThrottle(${1:value}, { wait: ${3:500} });", "$0"],
     "description": "Throttle a changing value. Requires useThrottle from ahooks.\n\n节流一个变化中的值；需要从 ahooks 导入 useThrottle。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "ahooks useThrottleFn": {
     "prefix": "useThrottleFn",
-    "body": [
-      "const { run: ${1:runScroll} } = useThrottleFn((${2:event}) => {",
-      "  $0",
-      "}, { wait: ${3:200} });"
-    ],
+    "body": ["const { run: ${1:runScroll} } = useThrottleFn((${2:event}) => {", "  $0", "}, { wait: ${3:200} });"],
     "description": "Create a throttled runner while keeping the latest closure. This returns a runner, unlike the react-use hook of the same name which returns the throttled result. Requires useThrottleFn from ahooks.\n\n创建保持最新闭包的节流运行器；它返回运行器，与 react-use 同名 Hook 返回节流后的结果不同。需要从 ahooks 导入 useThrottleFn。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "ahooks useBoolean": {
     "prefix": "useBoolean",
-    "body": [
-      "const [${1:isOpen}, { setTrue, setFalse, toggle }] = useBoolean(${2:false});",
-      "$0"
-    ],
+    "body": ["const [${1:isOpen}, { setTrue, setFalse, toggle }] = useBoolean(${2:false});", "$0"],
     "description": "Manage a boolean value with stable actions. This hook returns a tuple, unlike the usehooks-ts hook of the same name which returns an object. Requires useBoolean from ahooks.\n\n使用稳定操作管理布尔值；该 Hook 返回数组，与 usehooks-ts 同名 Hook 返回对象不同。需要从 ahooks 导入 useBoolean。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
@@ -57,50 +40,31 @@
   },
   "ahooks useClickAway": {
     "prefix": "useClickAway",
-    "body": [
-      "useClickAway((${2:event}) => {",
-      "  $0",
-      "}, ${1:targetRef});"
-    ],
+    "body": ["useClickAway((${2:event}) => {", "  $0", "}, ${1:targetRef});"],
     "description": "Run a callback for clicks outside a target ref or element. The callback comes first here, the reverse of the react-use hook with the same name. Requires useClickAway from ahooks and a target ref.\n\n点击目标 ref 或元素之外时执行回调；此处回调在前，与 react-use 同名 Hook 的参数顺序相反。需要从 ahooks 导入 useClickAway 和目标 ref。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "ahooks useEventListener": {
     "prefix": "useEventListener",
-    "body": [
-      "useEventListener('${1:keydown}', (${2:event}) => {",
-      "  $0",
-      "}, { target: ${3:document} });"
-    ],
+    "body": ["useEventListener('${1:keydown}', (${2:event}) => {", "  $0", "}, { target: ${3:document} });"],
     "description": "Subscribe to a DOM event with automatic cleanup; the target goes in the options object. Requires useEventListener from ahooks and a browser target.\n\n订阅 DOM 事件并自动清理，目标写在 options 对象里；需要从 ahooks 导入 useEventListener 和浏览器目标。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "ahooks useMemoizedFn": {
     "prefix": "useMemoizedFn",
-    "body": [
-      "const ${1:handleChange} = useMemoizedFn((${2:value}) => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["const ${1:handleChange} = useMemoizedFn((${2:value}) => {", "  $0", "});"],
     "description": "Create a stable callback identity that still reads current state. Requires useMemoizedFn from ahooks.\n\n创建引用稳定、且仍能读取当前状态的回调；需要从 ahooks 导入 useMemoizedFn。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "ahooks useCounter": {
     "prefix": "useCounter",
-    "body": [
-      "const [${1:count}, { inc, dec, reset }] = useCounter(${2:0}, { min: ${3:0} });",
-      "$0"
-    ],
+    "body": ["const [${1:count}, { inc, dec, reset }] = useCounter(${2:0}, { min: ${3:0} });", "$0"],
     "description": "Manage a numeric counter with optional bounds. Requires useCounter from ahooks.\n\n管理带可选上下界的数值计数器；需要从 ahooks 导入 useCounter。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "ahooks useInterval": {
     "prefix": "useInterval",
-    "body": [
-      "useInterval(() => {",
-      "  $0",
-      "}, ${1:1000});"
-    ],
+    "body": ["useInterval(() => {", "  $0", "}, ${1:1000});"],
     "description": "Run a callback on an interval; pass undefined as the delay to pause it. Requires useInterval from ahooks.\n\n按间隔执行回调，delay 传 undefined 可暂停；需要从 ahooks 导入 useInterval。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   }

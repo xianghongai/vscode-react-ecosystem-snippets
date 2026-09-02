@@ -1,23 +1,13 @@
 {
   "nuqs useQueryState (string)": {
-    "prefix": [
-      "useQueryState"
-    ],
-    "body": [
-      "const [${1:query}, ${2:setQuery}] = useQueryState('${3:q}');",
-      "$0"
-    ],
+    "prefix": ["useQueryState"],
+    "body": ["const [${1:query}, ${2:setQuery}] = useQueryState('${3:q}');", "$0"],
     "description": "Sync one string state with a URL query parameter; the value is null when the parameter is absent. Requires useQueryState from nuqs and a NuqsAdapter above this component.\n\n将一个字符串状态与 URL 查询参数同步，参数不存在时值为 null；需要从 nuqs 导入 useQueryState，且上层存在 NuqsAdapter。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "nuqs useQueryState (parsed with default)": {
-    "prefix": [
-      "useQueryState"
-    ],
-    "body": [
-      "const [${1:page}, ${2:setPage}] = useQueryState('${3:page}', parseAsInteger.withDefault(${4:1}));",
-      "$0"
-    ],
+    "prefix": ["useQueryState"],
+    "body": ["const [${1:page}, ${2:setPage}] = useQueryState('${3:page}', parseAsInteger.withDefault(${4:1}));", "$0"],
     "description": "Sync a parsed state with a URL query parameter. A default makes the value non-nullable. Requires useQueryState and a parser from nuqs, plus a NuqsAdapter above this component.\n\n将解析后的状态与 URL 查询参数同步；提供默认值后该值不再可能为 null。需要从 nuqs 导入 useQueryState 与对应 parser，且上层存在 NuqsAdapter。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
@@ -35,30 +25,19 @@
   },
   "nuqs parseAsStringLiteral": {
     "prefix": "parseAsStringLiteral",
-    "body": [
-      "const ${1:sortParser} = parseAsStringLiteral(['${2:asc}', '${3:desc}']).withDefault('${2}');",
-      "$0"
-    ],
+    "body": ["const ${1:sortParser} = parseAsStringLiteral(['${2:asc}', '${3:desc}']).withDefault('${2}');", "$0"],
     "description": "Restrict a query parameter to a fixed set of strings, rejecting anything else. Requires parseAsStringLiteral from nuqs.\n\n把查询参数限定在固定的字符串集合内，其余取值一律拒绝；需要从 nuqs 导入 parseAsStringLiteral。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "nuqs parseAsArrayOf": {
     "prefix": "parseAsArrayOf",
-    "body": [
-      "const ${1:tagsParser} = parseAsArrayOf(${2:parseAsString}, '${3:,}').withDefault([]);",
-      "$0"
-    ],
+    "body": ["const ${1:tagsParser} = parseAsArrayOf(${2:parseAsString}, '${3:,}').withDefault([]);", "$0"],
     "description": "Parse a delimited query parameter into an array. Requires parseAsArrayOf and an item parser from nuqs.\n\n把带分隔符的查询参数解析为数组；需要从 nuqs 导入 parseAsArrayOf 及元素 parser。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "nuqs setter options (history and shallow)": {
-    "prefix": [
-      "useQueryState"
-    ],
-    "body": [
-      "await ${1:setPage}(${2:2}, { history: '${3:push}', shallow: ${4:false} });",
-      "$0"
-    ],
+    "prefix": ["useQueryState"],
+    "body": ["await ${1:setPage}(${2:2}, { history: '${3:push}', shallow: ${4:false} });", "$0"],
     "description": "Write a query parameter with an explicit history entry, and let the server see the change. The setter returns a promise resolving to the new search params. Requires an existing nuqs setter.\n\n写入查询参数时显式产生历史记录，并让服务端感知该变化；setter 返回解析为新 search params 的 promise。需要已有的 nuqs setter。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },

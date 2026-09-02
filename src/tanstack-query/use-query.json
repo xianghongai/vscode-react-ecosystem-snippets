@@ -1,9 +1,6 @@
 {
   "TanStack Query useQuery display (JavaScript)": {
-    "prefix": [
-      "useQuery",
-      "uq"
-    ],
+    "prefix": ["useQuery", "uq"],
     "body": [
       "export function ${1:UserDetails}({ ${2:userId} }) {",
       "  const ${3:userQuery} = useQuery(${4:userQueryOptions}(${2}));",
@@ -29,10 +26,7 @@
     "scope": "javascriptreact"
   },
   "TanStack Query useQuery display (TypeScript)": {
-    "prefix": [
-      "useQuery",
-      "uq"
-    ],
+    "prefix": ["useQuery", "uq"],
     "body": [
       "export function ${1:UserDetails}({ ${2:userId} }: { ${2}: string }) {",
       "  const ${3:userQuery} = useQuery(${4:userQueryOptions}(${2}));",

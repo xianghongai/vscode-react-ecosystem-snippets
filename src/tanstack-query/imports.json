@@ -1,10 +1,7 @@
 {
   "TanStack Query import": {
     "prefix": "queryImport",
-    "body": [
-      "import { ${1:useQuery} } from '@tanstack/react-query';",
-      "$0"
-    ],
+    "body": ["import { ${1:useQuery} } from '@tanstack/react-query';", "$0"],
     "description": "Import a TanStack Query 5 API.\n\n导入 TanStack Query 5 API。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   }

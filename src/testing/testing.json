@@ -186,21 +186,13 @@
   },
   "testing-library store reset JavaScript": {
     "prefix": "testStoreResetJS",
-    "body": [
-      "beforeEach(() => {",
-      "  ${1:useStore}.getState().reset();",
-      "});$0"
-    ],
+    "body": ["beforeEach(() => {", "  ${1:useStore}.getState().reset();", "});$0"],
     "description": "Reset a test store before each case. Requires beforeEach from Vitest and a store exposing getState().reset(), such as a Zustand test store.\n\n每个用例前重置测试 store；需要 Vitest 的 beforeEach，以及暴露 getState().reset() 的 store，例如 Zustand 测试 store。",
     "scope": "javascript,javascriptreact"
   },
   "testing-library store reset TypeScript": {
     "prefix": "testStoreResetTS",
-    "body": [
-      "beforeEach(() => {",
-      "  ${1:useStore}.getState().reset();",
-      "});$0"
-    ],
+    "body": ["beforeEach(() => {", "  ${1:useStore}.getState().reset();", "});$0"],
     "description": "Reset a typed test store before each case. Requires beforeEach from Vitest and a store exposing getState().reset(), such as a Zustand test store.\n\n每个用例前重置带类型的测试 store；需要 Vitest 的 beforeEach，以及暴露 getState().reset() 的 store，例如 Zustand 测试 store。",
     "scope": "typescript,typescriptreact"
   }

@@ -15,94 +15,61 @@
   },
   "react-use useThrottle (throttled value)": {
     "prefix": "useThrottle",
-    "body": [
-      "const ${2:throttledValue} = useThrottle(${1:value}, ${3:500});",
-      "$0"
-    ],
+    "body": ["const ${2:throttledValue} = useThrottle(${1:value}, ${3:500});", "$0"],
     "description": "Throttle a changing value. Requires useThrottle from react-use.\n\n节流一个变化中的值；需要从 react-use 导入 useThrottle。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useThrottleFn (throttled result)": {
     "prefix": "useThrottleFn",
-    "body": [
-      "const ${1:throttledResult} = useThrottleFn(${2:computeResult}, ${3:500}, [${4:value}]);",
-      "$0"
-    ],
+    "body": ["const ${1:throttledResult} = useThrottleFn(${2:computeResult}, ${3:500}, [${4:value}]);", "$0"],
     "description": "Throttle a computation and read its latest result, which is null until the first call. Requires useThrottleFn from react-use.\n\n节流一次计算并读取其最新结果，首次调用前为 null；需要从 react-use 导入 useThrottleFn。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useToggle (boolean)": {
     "prefix": "useToggle",
-    "body": [
-      "const [${1:isOpen}, ${2:toggleOpen}] = useToggle(${3:false});",
-      "$0"
-    ],
+    "body": ["const [${1:isOpen}, ${2:toggleOpen}] = useToggle(${3:false});", "$0"],
     "description": "Manage a boolean with a toggle that also accepts an explicit next value. Requires useToggle from react-use.\n\n管理布尔值，toggle 也可传入明确的下一个值；需要从 react-use 导入 useToggle。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useLocalStorage": {
     "prefix": "useLocalStorage",
-    "body": [
-      "const [${2:value}, ${3:setValue}, ${4:removeValue}] = useLocalStorage('${1:app:key}', ${5:null});",
-      "$0"
-    ],
+    "body": ["const [${2:value}, ${3:setValue}, ${4:removeValue}] = useLocalStorage('${1:app:key}', ${5:null});", "$0"],
     "description": "Persist state to localStorage, with a remover. The value is undefined until the browser store is read. Requires useLocalStorage from react-use and a browser environment.\n\n将状态持久化到 localStorage 并提供清除函数；读取到浏览器存储前值为 undefined。需要从 react-use 导入 useLocalStorage，并运行在浏览器环境。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useClickAway": {
     "prefix": "useClickAway",
-    "body": [
-      "useClickAway(${1:targetRef}, (${2:event}) => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["useClickAway(${1:targetRef}, (${2:event}) => {", "  $0", "});"],
     "description": "Run a callback for clicks outside a ref. The ref comes first here, the reverse of the ahooks hook with the same name. Requires useClickAway from react-use and a target ref.\n\n点击 ref 之外时执行回调；此处 ref 在前，与 ahooks 同名 Hook 的参数顺序相反。需要从 react-use 导入 useClickAway 和目标 ref。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useEvent (DOM event)": {
     "prefix": "useEvent",
-    "body": [
-      "useEvent('${1:keydown}', (${2:event}) => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["useEvent('${1:keydown}', (${2:event}) => {", "  $0", "});"],
     "description": "Subscribe to a DOM event with automatic cleanup; the target defaults to window. Requires useEvent from react-use.\n\n订阅 DOM 事件并自动清理，目标默认为 window；需要从 react-use 导入 useEvent。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useCounter": {
     "prefix": "useCounter",
-    "body": [
-      "const [${1:count}, { inc, dec, reset }] = useCounter(${2:0});",
-      "$0"
-    ],
+    "body": ["const [${1:count}, { inc, dec, reset }] = useCounter(${2:0});", "$0"],
     "description": "Manage a numeric counter with bounded actions. Requires useCounter from react-use.\n\n管理数值计数器及其操作；需要从 react-use 导入 useCounter。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useMedia (media query)": {
     "prefix": "useMedia",
-    "body": [
-      "const ${1:isWideScreen} = useMedia('${2:(min-width: 768px)}', ${3:false});",
-      "$0"
-    ],
+    "body": ["const ${1:isWideScreen} = useMedia('${2:(min-width: 768px)}', ${3:false});", "$0"],
     "description": "Track a CSS media query, with a default for the first server render. Requires useMedia from react-use.\n\n跟踪 CSS 媒体查询，并为首次服务端渲染提供默认值；需要从 react-use 导入 useMedia。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useCopyToClipboard": {
     "prefix": "useCopyToClipboard",
-    "body": [
-      "const [${1:copyState}, ${2:copyToClipboard}] = useCopyToClipboard();",
-      "$0"
-    ],
+    "body": ["const [${1:copyState}, ${2:copyToClipboard}] = useCopyToClipboard();", "$0"],
     "description": "Copy text to the clipboard and read the result of the last attempt. Requires useCopyToClipboard from react-use and a secure context.\n\n复制文本到剪贴板并读取上次尝试的结果；需要从 react-use 导入 useCopyToClipboard，并运行在安全上下文中。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "react-use useInterval": {
     "prefix": "useInterval",
-    "body": [
-      "useInterval(() => {",
-      "  $0",
-      "}, ${1:1000});"
-    ],
+    "body": ["useInterval(() => {", "  $0", "}, ${1:1000});"],
     "description": "Run a callback on an interval; pass null as the delay to pause it. Requires useInterval from react-use.\n\n按间隔执行回调，delay 传 null 可暂停；需要从 react-use 导入 useInterval。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   }

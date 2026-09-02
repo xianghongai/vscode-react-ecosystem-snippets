@@ -1,9 +1,6 @@
 {
   "TanStack Query queryOptions (JavaScript)": {
-    "prefix": [
-      "queryOptions",
-      "qo"
-    ],
+    "prefix": ["queryOptions", "qo"],
     "body": [
       "export function ${1:userQueryOptions}(${2:userId}) {",
       "  return queryOptions({",
@@ -18,10 +15,7 @@
     "scope": "javascript,javascriptreact"
   },
   "TanStack Query queryOptions (TypeScript)": {
-    "prefix": [
-      "queryOptions",
-      "qo"
-    ],
+    "prefix": ["queryOptions", "qo"],
     "body": [
       "export function ${1:userQueryOptions}(${2:userId}: string) {",
       "  return queryOptions({",

@@ -1,19 +1,13 @@
 {
   "React Hook Form import": {
     "prefix": "rhfImport",
-    "body": [
-      "import { ${1:useForm} } from 'react-hook-form';",
-      "$0"
-    ],
+    "body": ["import { ${1:useForm} } from 'react-hook-form';", "$0"],
     "description": "Import a React Hook Form 7 API.\n\n导入 React Hook Form 7 API。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "React Hook Form Zod resolver import": {
     "prefix": "rhfImportZodResolver",
-    "body": [
-      "import { zodResolver } from '@hookform/resolvers/zod';",
-      "$0"
-    ],
+    "body": ["import { zodResolver } from '@hookform/resolvers/zod';", "$0"],
     "description": "Import the Zod resolver. Requires @hookform/resolvers 5 and Zod 4.\n\n导入 Zod resolver；需要 @hookform/resolvers 5 和 Zod 4。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   }

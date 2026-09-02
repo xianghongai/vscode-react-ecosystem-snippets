@@ -1,48 +1,31 @@
 {
   "rooks useDebouncedValue": {
     "prefix": "useDebouncedValue",
-    "body": [
-      "const [${2:debouncedValue}, ${3:setDebouncedValueNow}] = useDebouncedValue(${1:value}, ${4:500});",
-      "$0"
-    ],
+    "body": ["const [${2:debouncedValue}, ${3:setDebouncedValueNow}] = useDebouncedValue(${1:value}, ${4:500});", "$0"],
     "description": "Debounce a value; the second element writes the debounced value immediately, bypassing the wait. Requires useDebouncedValue from rooks.\n\n防抖一个值；返回的第二项可立即写入防抖值，跳过等待。需要从 rooks 导入 useDebouncedValue。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "rooks useDebounceFn": {
     "prefix": "useDebounceFn",
-    "body": [
-      "const [${1:runSearch}, ${2:isWaiting}] = useDebounceFn((${3:value}) => {",
-      "  $0",
-      "}, ${4:500});"
-    ],
+    "body": ["const [${1:runSearch}, ${2:isWaiting}] = useDebounceFn((${3:value}) => {", "  $0", "}, ${4:500});"],
     "description": "Create a debounced callback and a flag telling whether a call is pending. This returns a tuple, unlike the ahooks hook of the same name which returns an object with run, cancel and flush. Requires useDebounceFn from rooks.\n\n创建防抖回调，并返回是否有调用待执行的标记；它返回数组，与 ahooks 同名 Hook 返回含 run / cancel / flush 的对象不同。需要从 rooks 导入 useDebounceFn。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "rooks useThrottle (throttled callback)": {
     "prefix": "useThrottle",
-    "body": [
-      "const [${1:runScroll}, ${2:isThrottled}] = useThrottle((${3:event}) => {",
-      "  $0",
-      "}, ${4:200});"
-    ],
+    "body": ["const [${1:runScroll}, ${2:isThrottled}] = useThrottle((${3:event}) => {", "  $0", "}, ${4:200});"],
     "description": "Throttle a callback so it runs at most once per interval. This throttles a callback, unlike the ahooks and react-use hooks of the same name which throttle a value. Requires useThrottle from rooks.\n\n节流回调，使其在每个间隔内至多执行一次；它节流的是回调，与 ahooks、react-use 同名 Hook 节流值不同。需要从 rooks 导入 useThrottle。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "rooks useToggle": {
     "prefix": "useToggle",
-    "body": [
-      "const [${1:isOpen}, ${2:toggleOpen}] = useToggle(${3:false});",
-      "$0"
-    ],
+    "body": ["const [${1:isOpen}, ${2:toggleOpen}] = useToggle(${3:false});", "$0"],
     "description": "Manage a boolean with a toggle. Requires useToggle from rooks.\n\n以 toggle 管理布尔值；需要从 rooks 导入 useToggle。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "rooks useCounter": {
     "prefix": "useCounter",
-    "body": [
-      "const { value: ${1:count}, increment, decrement, incrementBy, reset } = useCounter(${2:0});",
-      "$0"
-    ],
+    "body": ["const { value: ${1:count}, increment, decrement, incrementBy, reset } = useCounter(${2:0});", "$0"],
     "description": "Manage a numeric counter with by-amount actions. This returns an object keyed value, unlike the usehooks-ts hook of the same name which keys it count, and unlike the ahooks and react-use hooks which return a tuple. Requires useCounter from rooks.\n\n管理数值计数器，并提供按量增减；它返回对象且键名为 value，与 usehooks-ts 同名 Hook 的 count 不同，也与 ahooks、react-use 返回数组不同。需要从 rooks 导入 useCounter。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
@@ -57,50 +40,31 @@
   },
   "rooks useOutsideClickRef": {
     "prefix": "useOutsideClickRef",
-    "body": [
-      "const [${1:containerRef}] = useOutsideClickRef((${2:event}) => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["const [${1:containerRef}] = useOutsideClickRef((${2:event}) => {", "  $0", "});"],
     "description": "Get a ref to attach to an element; the handler runs on clicks outside it. This hands back a ref rather than accepting one, unlike the equivalents in ahooks, react-use and usehooks-ts. Requires useOutsideClickRef from rooks.\n\n取得一个挂到元素上的 ref，点击其外部时执行回调；它是返回 ref 而非接收 ref，与 ahooks、react-use、usehooks-ts 的对应 Hook 相反。需要从 rooks 导入 useOutsideClickRef。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "rooks useMediaMatch": {
     "prefix": "useMediaMatch",
-    "body": [
-      "const ${1:isWideScreen} = useMediaMatch('${2:(min-width: 768px)}');",
-      "$0"
-    ],
+    "body": ["const ${1:isWideScreen} = useMediaMatch('${2:(min-width: 768px)}');", "$0"],
     "description": "Track a CSS media query. Requires useMediaMatch from rooks.\n\n跟踪 CSS 媒体查询；需要从 rooks 导入 useMediaMatch。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "rooks useIntervalWhen": {
     "prefix": "useIntervalWhen",
-    "body": [
-      "useIntervalWhen(() => {",
-      "  $0",
-      "}, ${1:1000}, ${2:isRunning});"
-    ],
+    "body": ["useIntervalWhen(() => {", "  $0", "}, ${1:1000}, ${2:isRunning});"],
     "description": "Run a callback on an interval only while a condition holds, which replaces pausing by passing a null delay. Requires useIntervalWhen from rooks.\n\n仅在条件成立期间按间隔执行回调，取代传 null 延时来暂停的写法；需要从 rooks 导入 useIntervalWhen。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "rooks useKey": {
     "prefix": "useKey",
-    "body": [
-      "useKey(['${1:Escape}'], (${2:event}) => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["useKey(['${1:Escape}'], (${2:event}) => {", "  $0", "});"],
     "description": "Run a callback for the given keys. Requires useKey from rooks.\n\n按下指定按键时执行回调；需要从 rooks 导入 useKey。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "rooks useFreshCallback": {
     "prefix": "useFreshCallback",
-    "body": [
-      "const ${1:handleChange} = useFreshCallback((${2:value}) => {",
-      "  $0",
-      "});"
-    ],
+    "body": ["const ${1:handleChange} = useFreshCallback((${2:value}) => {", "  $0", "});"],
     "description": "Keep a callback identity stable while it still sees current state. Requires useFreshCallback from rooks.\n\n保持回调引用稳定，同时仍能读取当前状态；需要从 rooks 导入 useFreshCallback。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   }

@@ -1,24 +1,13 @@
 {
   "Immer import produce": {
     "prefix": "immerImportProduce",
-    "body": [
-      "import { produce } from 'immer';",
-      "$0"
-    ],
+    "body": ["import { produce } from 'immer';", "$0"],
     "description": "Import Immer produce. Place it in the module import section.\n\n导入 Immer 的 produce；放在模块导入区。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
   "Immer produce state copy": {
-    "prefix": [
-      "immerProduce",
-      "ip"
-    ],
-    "body": [
-      "const ${1:nextState} = produce(${2:state}, (draft) => {",
-      "  draft.${3:count} += 1;",
-      "});",
-      "$0"
-    ],
+    "prefix": ["immerProduce", "ip"],
+    "body": ["const ${1:nextState} = produce(${2:state}, (draft) => {", "  draft.${3:count} += 1;", "});", "$0"],
     "description": "Create an immutable next state with produce. Requires produce from immer and an existing state value.\n\n使用 produce 创建不可变的新状态；需要从 immer 导入 produce，以及已有的 state 值。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
@@ -79,12 +68,7 @@
   },
   "Immer curried producer": {
     "prefix": "immerCurried",
-    "body": [
-      "const ${1:updateState} = produce((draft, ${2:value}) => {",
-      "  draft.${3:count} = ${2};",
-      "});",
-      "$0"
-    ],
+    "body": ["const ${1:updateState} = produce((draft, ${2:value}) => {", "  draft.${3:count} = ${2};", "});", "$0"],
     "description": "Create a reusable curried Immer producer. Requires produce from immer and compatible draft state.\n\n创建可复用的柯里化 Immer producer；需要从 immer 导入 produce，以及类型兼容的 draft 状态。",
     "scope": "javascript,javascriptreact,typescript,typescriptreact"
   },
