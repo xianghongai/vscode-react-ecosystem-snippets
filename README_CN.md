@@ -26,9 +26,9 @@ VS Code 中的 React 生态日常代码片段：客户端状态、不可变更�
 
 前缀遵循三种模式：
 
-1. **API 名本身就是前缀** —— `useQuery`、`useForm`、`useAtom`、`atom`。库 API 的名字**就是**最终要写下的代码，中间没有翻译环节，无需先记一套映射。
-2. **少数日常 API 另配短码** —— `uq` = `useQuery`、`uf` = `useForm`、`ua` = `useAtom`。两种形式挂在同一条片段上，短码是用熟之后的提速手段，而不是上手门槛。通用 Hooks 库一律不配：`useCounter` 有四个库都定义，单一缩写说不清指哪个。
-3. **同库共用词干，场景在其后扩展** —— `zustand…`、`zod…`、`rhf…`、`query…`、`i18n…`、`immer…`、`rtl…`。打出词干就能在补全列表里摊开整个库。
+1. **API 名本身就是前缀**：`useQuery`、`useForm`、`useAtom`、`atom`。库 API 的名字**就是**最终要写下的代码，中间没有翻译环节，无需先记一套映射。
+2. **少数日常 API 另配短码**：`uq` = `useQuery`、`uf` = `useForm`、`ua` = `useAtom`。两种形式挂在同一条片段上，短码是用熟之后的提速手段，而不是上手门槛。通用 Hooks 库一律不配：`useCounter` 有四个库都定义，单一缩写说不清指哪个。
+3. **同库共用词干，场景在其后扩展**：`zustand…`、`zod…`、`rhf…`、`query…`、`i18n…`、`immer…`、`rtl…`。打出词干就能在补全列表里摊开整个库。
 
 ### 客户端状态 — Zustand
 

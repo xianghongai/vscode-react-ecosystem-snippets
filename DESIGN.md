@@ -46,6 +46,6 @@ When building from source, you can set `SNIPPETS_EXCLUDE` to exclude whole direc
 
 验证目标为 React 19。TypeScript 工程还需匹配的 React 类型包。测试片段假定存在 DOM 测试环境、自动 JSX runtime 与 jest-dom setup，它们本身不负责初始化测试框架。
 
-给出多个选项的行是**互斥的备选**，不是要一起装——通常只选一个客户端状态库和一个通用 Hooks 库。nuqs 2 另需在使用其 Hook 的组件之上挂载 adapter；`nuqsAdapter` 片段完成该配置，并在描述中给出其他路由对应的 adapter 路径。
+给出多个选项的行是**互斥的备选**，不是要一起装，通常只选一个客户端状态库和一个通用 Hooks 库。nuqs 2 另需在使用其 Hook 的组件之上挂载 adapter；`nuqsAdapter` 片段完成该配置，并在描述中给出其他路由对应的 adapter 路径。
 
 从源码自建，环境变量 `SNIPPETS_EXCLUDE` 可调整目录排除来源，如，设为 `src/ahooks/**,src/react-use/**` 即只打包 `usehooks-ts` 的片段。写进已被 git 忽略的 `.env`，该选择便不进入源码树；命令行传入的值优先于该文件。
